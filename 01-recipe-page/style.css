@@ -16,8 +16,42 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'YoungSerif';
+  src: url('./assets/fonts/young-serif/YoungSerif-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Outfit';
+  src: url('./assets/fonts/outfit/static/Outfit-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Outfit';
+  src: url('./assets/fonts/outfit/static/Outfit-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Outfit';
+  src: url('./assets/fonts/outfit/static/Outfit-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 body {
+  background-color: var(--stone-100);
   width: 375px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+div.app {
+  background-color: var(--white);
 }
 
 header.img-container, img {
@@ -26,79 +60,6 @@ header.img-container, img {
 
 main {
   padding: 40px 32px; 
-}
-
-h1.title-textPreset1 {
-  margin-bottom: 24px;
-  color: var(--stone-900);
-  font-size: 40px;
-  line-height: 100%;
-}
-
-h2.title-textPreset2 {
-  margin-bottom: 24px;
-  color: var(--brown-800);
-  font-size: 28px;
-  /* font-family: young-serif; */
-  line-height: 100%;
-}
-
-.textPreset4Bold {
-  font-size: 16px;
-  font-weight: bold;
-  /* font-family: outfit; */ 
-  line-height: 150%;
-}
-
-ul.description, ol.description {
-  color: var(--stone-600);
-  list-style-position: inside; /*padding才有*/
-  padding-left: 8px;
-  
-}
-ul li {
-  list-style: none; /* Remove HTML bullets */
-}
-ol {
-  counter-reset: li;
-}
-ol li {
-  counter-increment: li;
-   list-style: none; /* Remove HTML number */
-}
-ol li::before {
-  padding-right: 16px;
-  color: var(--brown-800); 
-  content: counter(li) ".";
-  font-weight: bold;
-  /* font-family: outfit; */
-  line-height: 150%;
-}
-
-li {
-  color: var(--stone-600);
-  font-size: 16px;
-  /* font-family: outfit; */
-  line-height: 150%;
-}
-
-ul li::before {
-  content: "•";
-  width: 24px;
-  height: 24px;
-  padding-right: 16px;
-  color: var(--brown-800);
-}
-div.preparation-time {
-  margin-top: 32px;
-  padding: 24px;
-  background: var(--rose-50);
-  color: var(--stone-600);
-}
-
-div.preparation-time .title {
-  margin-bottom: 16px;
-  color: var(--rose-800);
 }
 
 section.section-mt-mb {
@@ -111,6 +72,106 @@ section.section-mt {
 
 hr {
   border: 1px var(--stone-150) solid;
+}
+
+h1.title-textPreset1 {
+  margin-bottom: 24px;
+  line-height: 100%;
+  font-family: 'YoungSerif', serif; 
+  font-size: 36px;
+  color: var(--stone-900);
+}
+
+div.description {
+  width: 100%;
+  line-height: 150%;
+  font-size: 16px;
+  color: var(--stone-600);
+}
+
+div.preparation-time {
+  margin-top: 32px;
+  padding: 24px;
+  border-radius: 12px;
+  background: var(--rose-50);
+  color: var(--stone-600);
+}
+
+div.preparation-time .title {
+  margin-bottom: 16px;
+  font-weight: 600;
+  color: var(--rose-800);
+}
+
+h2.title-textPreset2 {
+  margin-bottom: 24px;
+  line-height: 100%;
+  font-family: 'YoungSerif', serif; 
+  font-size: 28px;
+  color: var(--brown-800);
+}
+
+.textPreset4Bold {
+  line-height: 150%;
+  font-family: 'Outfit', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+ul.description, ol.description {
+  padding-left: 8px;
+  list-style-position: inside; /*padding才有*/
+  color: var(--stone-600);
+}
+
+ol {
+  counter-reset: li;
+}
+
+ol li {
+  position: relative;
+  padding-left: 32px;
+  counter-increment: li;
+  list-style: none;  
+}
+
+ol li::before {
+  position: absolute;
+  left: 0;
+  top: 0%;
+  display: inline-block;
+  border-radius: 50%;
+  content: counter(li) ".";
+  line-height: 150%;
+  font-weight: bold;
+  color: var(--brown-800); 
+}
+
+li {
+  padding-left: 28px;
+  line-height: 150%;
+  font-size: 16px;
+  color: var(--stone-600);
+}
+
+ul li {
+  position: relative;
+  list-style: none;
+}
+
+ul li::before {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background-color: var(--brown-800);
+  border-radius: 50%;
+  content: "";
+  line-height: 0;
+  font-size: 0; 
 }
 
 table {
