@@ -43,8 +43,10 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: var(--stone-100);
-  width: 375px;
   font-family: 'Outfit', sans-serif;
   font-weight: 400;
   letter-spacing: 0;
@@ -52,6 +54,7 @@ body {
 
 div.app {
   background-color: var(--white);
+  width: 375px;
 }
 
 header.img-container, img {
@@ -195,5 +198,32 @@ table .table-bottom {
   border: none;
 }
 
+@media screen and (min-width:376px) { 
+
+  div.app {
+    padding: 40px;
+    width: 616px;
+    border-radius: 24px;
+  }
+
+  header.img-container img {
+    border-radius: 12px;
+    height: 300px;
+  } 
+
+  main {
+    padding: 40px 0 0 0; 
+  }
+
+  h1.title-textPreset1 {
+    font-size: 40px;
+  }
+}
+
+@media screen and (min-width:769px) {
+  div.app {
+    width: 736px;
+  }
+}
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
