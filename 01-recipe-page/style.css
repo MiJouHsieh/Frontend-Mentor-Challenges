@@ -52,7 +52,7 @@ body {
   letter-spacing: 0;
 }
 
-div.app {
+article {
   background-color: var(--white);
   width: 375px;
 }
@@ -65,16 +65,13 @@ main {
   padding: 40px 32px; 
 }
 
-section.section-mt-mb {
-  margin: 32px 0;
-}
-
 section.section-mt {
   margin: 32px 0 0 0;
 }
 
-hr {
+hr.separator  {
   border: 1px var(--stone-150) solid;
+  margin: 32px 0;
 }
 
 h1.title-textPreset1 {
@@ -133,10 +130,8 @@ ol {
 }
 
 ol li {
-  position: relative;
   padding-left: 32px;
   counter-increment: li;
-  list-style: none;  
 }
 
 ol li::before {
@@ -152,14 +147,11 @@ ol li::before {
 }
 
 li {
+  position: relative;
   padding-left: 28px;
   line-height: 150%;
   font-size: 16px;
   color: var(--stone-600);
-}
-
-ul li {
-  position: relative;
   list-style: none;
 }
 
@@ -200,7 +192,7 @@ table .table-bottom {
 
 @media screen and (min-width:376px) { 
 
-  div.app {
+  article {
     padding: 40px;
     width: 616px;
     border-radius: 24px;
@@ -221,7 +213,7 @@ table .table-bottom {
 }
 
 @media screen and (min-width:769px) {
-  div.app {
+  article {
     width: 736px;
   }
 }
