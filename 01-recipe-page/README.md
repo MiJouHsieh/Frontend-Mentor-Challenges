@@ -40,7 +40,7 @@ This project uses a responsive web design (RWD) layout for three different scree
 
 - Solution URL: [Github repo](https://github.com/MiJouHsieh/Frontend-Mentor-Challenges/tree/main/01-recipe-page)
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [01-recipe-page](https://mijouhsieh.github.io/Frontend-Mentor-Challenges/01-recipe-page/)
 
 
 ## My process
