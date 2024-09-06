@@ -121,7 +121,6 @@ h2.title-textPreset2 {
 
 ul.description, ol.description {
   padding-left: 8px;
-  list-style-position: inside; /*padding才有*/
   color: var(--stone-600);
 }
 
@@ -134,25 +133,23 @@ ol li {
   counter-increment: li;
 }
 
-ol li::before {
-  position: absolute;
-  left: 0;
-  top: 0%;
-  display: inline-block;
-  border-radius: 50%;
-  content: counter(li) ".";
-  line-height: 150%;
-  font-weight: bold;
-  color: var(--brown-800); 
-}
-
 li {
   position: relative;
   padding-left: 28px;
   line-height: 150%;
   font-size: 16px;
-  color: var(--stone-600);
   list-style: none;
+}
+
+ol li::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  content: counter(li) ".";
+  line-height: 150%;
+  font-weight: bold;
+  color: var(--brown-800); 
 }
 
 ul li::before {
