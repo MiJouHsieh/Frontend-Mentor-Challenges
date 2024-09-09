@@ -5,6 +5,8 @@ export const lightTheme = {
   appNameColor: "#222731",
   ThemeToggleButtonColor: "#4B6A9B",
 
+  boxShadowColor: "0px 4px 8px rgba(151, 151, 151, 0.3)",
+
   searchFormBgColor: "#FEFEFE",
   idlePlaceholderColor:"#4B6A9B",
   inputValueColor: "#222731",
@@ -21,6 +23,8 @@ export const darkTheme = {
 
   appNameColor: "#ffffff",
   ThemeToggleButtonColor: "#ffffff",
+
+  boxShadowColor: "0px 4px 12px rgba(0, 0, 0, 0.3)",
 
   searchFormBgColor: "#1E2A47",
   idlePlaceholderColor:"#ffffff",

@@ -28,8 +28,9 @@ const ThemeToggleButton = styled.button`
   color: ${(props) => props.theme.ThemeToggleButtonColor};
   cursor: pointer;
 
-  &:hover, &:focus {
-    opacity: 0.8;
+  &:hover,
+  &:focus {
+    background: none;
   }
 
   img {
