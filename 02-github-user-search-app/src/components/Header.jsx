@@ -32,7 +32,7 @@ const ThemeToggleButton = styled.button`
     opacity: 0.8;
   }
 
-  div {
+  img {
     width: 20px;
     height: 20px;
   }

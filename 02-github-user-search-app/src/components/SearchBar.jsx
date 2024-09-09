@@ -1,9 +1,51 @@
+import styled from "styled-components";
+import iconSearch from "src/assets/icon-search.svg";
+
+const SearchForm = styled.form`
+  margin-bottom: 16px;
+  padding: 6.5px 6.5px 6.5px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px;
+  background: ${(props) => props.theme.searchFormBgColor};
+  span,
+  img {
+    width: 20px;
+    height: 20px;
+  }
+`;
+const Input = styled.input`
+  background: ${(props) => props.theme.searchFormBgColor};
+  color: ${(props) => props.theme.inputValueColor};
+  border: 0px;
+  &::placeholder {
+    color: ${(props) => props.theme.textColor};
+  }
+
+  &:focus {
+    outline: 1px solid ${(props) => props.theme.searchFormBgColor};
+  }
+`;
+
+const SearchBtn = styled.button`
+  background: ${(props) => props.theme.inputBgColor};
+  width: 84px;
+  height: 46px;
+  font-size: 16px;
+  font-weight: bold;
+  background: ${(props) => props.theme.searchBtnBgColor};
+  border-radius: 10px;
+`;
+
 export default function SearchBar() {
   return (
-    // <input type="input" placeholder="Search GitHub username...">
-    <div>
-      <button>Search</button>
-    </div>
-    // {/* </input> */}
+    <SearchForm>
+      <span>
+        <img src={iconSearch} alt="search input" />
+      </span>
+      <Input type="text" placeholder="Search GitHub username..." />
+      <SearchBtn>Search</SearchBtn>
+    </SearchForm>
   );
 }
