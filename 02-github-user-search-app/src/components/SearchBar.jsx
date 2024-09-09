@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import styled from "styled-components";
 import iconSearch from "src/assets/icon-search.svg";
 
@@ -34,18 +35,25 @@ const SearchBtn = styled.button`
   height: 46px;
   font-size: 16px;
   font-weight: bold;
-  background: ${(props) => props.theme.searchBtnBgColor};
+  background: ${(props) =>
+    props.disabled ? props.theme.searchBtnBgColor : '#60ABFF' };
   border-radius: 10px;
+  cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
 `;
 
 export default function SearchBar() {
+  const [inputValue, setInputValue] = useState("")
+
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value)
+  }
   return (
     <SearchForm>
       <span>
         <img src={iconSearch} alt="search input" />
       </span>
-      <Input type="text" placeholder="Search GitHub username..." />
-      <SearchBtn>Search</SearchBtn>
+      <Input type="text" placeholder="Search GitHub username..." value={inputValue} onChange={handleInputChange} />
+      <SearchBtn disabled={inputValue.length === 0}>Search</SearchBtn>
     </SearchForm>
   );
 }
