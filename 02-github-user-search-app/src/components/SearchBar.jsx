@@ -47,12 +47,25 @@ export default function SearchBar() {
   const handleInputChange = (e) => {
     setInputValue(e.target.value)
   }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if(inputValue.trim()) {
+      console.log('Search for:', inputValue)
+    }
+  }
+
   return (
-    <SearchForm>
+    <SearchForm onSubmit={handleSubmit}>
       <span>
         <img src={iconSearch} alt="search input" />
       </span>
-      <Input type="text" placeholder="Search GitHub username..." value={inputValue} onChange={handleInputChange} />
+      <Input
+        type="text"
+        placeholder="Search GitHub username..."
+        value={inputValue}
+        onChange={handleInputChange}
+      />
       <SearchBtn disabled={inputValue.length === 0}>Search</SearchBtn>
     </SearchForm>
   );
