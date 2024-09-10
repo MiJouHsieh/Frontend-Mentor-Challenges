@@ -23,11 +23,14 @@ const Input = styled.input`
   border: 0px;
   &::placeholder {
     color: ${(props) => props.theme.textColor};
+    letter-spacing: -1px;
   }
 
   &:focus {
     outline: 1px solid ${(props) => props.theme.searchFormBgColor};
   }
+  border: 1px solid red;
+  width: 184px;
 `;
 
 const SearchBtn = styled.button`

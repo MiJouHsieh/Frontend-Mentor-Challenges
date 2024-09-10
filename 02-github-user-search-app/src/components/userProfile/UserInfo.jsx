@@ -1,12 +1,41 @@
+import styled from "styled-components";
+
+const UserInfoContainer = styled.div`
+  margin-bottom: 32px;
+  border: 1px solid blue;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+`;
+const UserAvatarContainer = styled.div`
+  border: 1px solid blue;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 19px;
+`;
+const UserInfoTextContainer = styled.div`
+  border: 1px solid green;
+  display: flex;
+  flex-direction: column;
+  h3 {
+    font-weight: bold;
+  }
+`;
+const AccountName = styled.p`
+  color: #0079ff;
+`;
 export default function UserInfo() {
-  return(
-    <div>
-      <div><img/></div>
-      <div>
+  return (
+    <UserInfoContainer>
+      <UserAvatarContainer>
+        <img />
+      </UserAvatarContainer>
+      <UserInfoTextContainer>
         <h3>The Octocat</h3>
-        <p>@octocat</p>
+        <AccountName> @octocat</AccountName>
         <p>Joined 25 Jan 2011</p>
-      </div>
-    </div>
-  )
+      </UserInfoTextContainer>
+    </UserInfoContainer>
+  );
 }
