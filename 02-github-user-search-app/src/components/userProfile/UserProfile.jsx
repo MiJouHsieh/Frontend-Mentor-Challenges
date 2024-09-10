@@ -8,10 +8,12 @@ import {
 } from "src/components/userProfile";
 
 const UserProfileContainer = styled.div`
-  padding:  32px 24px 0 24px; 
-  border: 1px solid red;
+  padding: 32px 24px 0 24px;
   display: flex;
   flex-direction: column;
+  border-radius: 15px;
+  background: ${(props) => props.theme.sectionBgColor};
+  box-shadow: ${(props) => props.theme.boxShadowColor};
   align-items: start;
 `;
 

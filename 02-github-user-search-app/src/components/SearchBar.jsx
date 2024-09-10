@@ -9,7 +9,7 @@ const SearchForm = styled.form`
   justify-content: space-between;
   align-items: center;
   border-radius: 15px;
-  background: ${(props) => props.theme.searchFormBgColor};
+  background: ${(props) => props.theme.sectionBgColor};
   box-shadow: ${(props) => props.theme.boxShadowColor};
   span,
   img {
@@ -18,7 +18,7 @@ const SearchForm = styled.form`
   }
 `;
 const Input = styled.input`
-  background: ${(props) => props.theme.searchFormBgColor};
+  background: ${(props) => props.theme.sectionBgColor};
   color: ${(props) => props.theme.inputValueColor};
   border: 0px;
   &::placeholder {
@@ -27,9 +27,8 @@ const Input = styled.input`
   }
 
   &:focus {
-    outline: 1px solid ${(props) => props.theme.searchFormBgColor};
+    outline: 1px solid ${(props) => props.theme.sectionBgColor};
   }
-  border: 1px solid red;
   width: 184px;
 `;
 

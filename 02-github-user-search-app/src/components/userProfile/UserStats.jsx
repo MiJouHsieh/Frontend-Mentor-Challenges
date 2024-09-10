@@ -3,7 +3,6 @@ import styled from "styled-components";
 const UserStatsContainer = styled.div`
   margin-bottom: 24px;
   background: ${(props) => props.theme.userStatsBgColor};
-  border: 1px solid blue;
   display: flex;
   width: 100%;
   height: 85px;
@@ -13,7 +12,6 @@ const UserStatsContainer = styled.div`
 `;
 
 const UserStatsItem = styled.div`
-  border: 1px solid red;
   height: 48px;
   display: flex;
   flex-direction: column;

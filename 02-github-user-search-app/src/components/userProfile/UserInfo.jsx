@@ -2,20 +2,17 @@ import styled from "styled-components";
 
 const UserInfoContainer = styled.div`
   margin-bottom: 32px;
-  border: 1px solid blue;
   display: flex;
   align-items: center;
   font-size: 13px;
 `;
 const UserAvatarContainer = styled.div`
-  border: 1px solid blue;
   width: 70px;
   height: 70px;
   border-radius: 50%;
   margin-right: 19px;
 `;
 const UserInfoTextContainer = styled.div`
-  border: 1px solid green;
   display: flex;
   flex-direction: column;
   h3 {

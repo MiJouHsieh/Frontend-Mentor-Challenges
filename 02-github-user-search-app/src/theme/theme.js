@@ -9,7 +9,7 @@ export const lightTheme = {
 
   boxShadowColor: "0px 4px 8px rgba(151, 151, 151, 0.3)",
 
-  searchFormBgColor: "#FEFEFE",
+  sectionBgColor: "#FEFEFE",
   idlePlaceholderColor:"#4B6A9B",
   inputValueColor: "#222731",
 
@@ -32,7 +32,7 @@ export const darkTheme = {
 
   boxShadowColor: "0px 4px 12px rgba(0, 0, 0, 0.3)",
 
-  searchFormBgColor: "#1E2A47",
+  sectionBgColor: "#1E2A47",
   idlePlaceholderColor:"#ffffff",
   inputValueColor: "#ffffff",
 
