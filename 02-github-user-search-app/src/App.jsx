@@ -19,7 +19,7 @@ function App() {
   return (
     <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
       <Container>
-        <Header toggleTheme={toggleTheme} isDarkMode={isDarkMode} color='appNameColor'/>
+        <Header toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
         <SearchBar />
         <UserProfile />
       </Container>
