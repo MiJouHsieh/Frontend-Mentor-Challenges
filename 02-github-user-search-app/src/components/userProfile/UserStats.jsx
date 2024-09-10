@@ -30,20 +30,20 @@ const UserStatsItem = styled.div`
   }
 `;
 
-export default function UserStats() {
+export default function UserStats({ userData }) {
   return (
     <UserStatsContainer className="group">
       <UserStatsItem>
         <div className="title">Repos</div>
-        <div className="value">8</div>
+        <div className="value">{userData.public_repos}</div>
       </UserStatsItem>
       <UserStatsItem>
         <div className="title">Followers</div>
-        <div className="value">3938</div>
+        <div className="value">{userData.followers}</div>
       </UserStatsItem>
       <UserStatsItem>
         <div className="title">Following</div>
-        <div className="value">9</div>
+        <div className="value">{userData.following}</div>
       </UserStatsItem>
     </UserStatsContainer>
   );

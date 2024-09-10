@@ -8,6 +8,7 @@ import styled from "styled-components";
 const UserLinksContainer = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
 `;
 const UserLinksItem = styled.div`
   margin-bottom: 16px;
@@ -30,22 +31,24 @@ const UserLinksItem = styled.div`
   }
 
   h4 {
+    width: 270px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     color: ${(props) =>
       props.isUnavailable ? "#A5B4CD" : "inherit"}; /* 動態改變顏色 */
     a {
       color: ${(props) => props.theme.textColor};
+      
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
     }
   }
 `;
 
-export default function UserLinks() {
-  const userData = {
-    location: "San Francisco",
-    website: "https://github.blog",
-    twitter: null, // 模擬 "未有值"
-    company: "@github",
-  };
-
+export default function UserLinks({ userData }) {
 
   return (
     <UserLinksContainer className="links-group">
@@ -60,13 +63,9 @@ export default function UserLinks() {
           <IconWebsite />
         </span>
         <h4 className="link">
-          {userData.website ? (
-            <a
-              href={userData.website}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {userData.website}
+          {userData.blog ? (
+            <a href={userData.blog} target="_blank" rel="noopener noreferrer">
+              {userData.blog}
             </a>
           ) : (
             "Not available"

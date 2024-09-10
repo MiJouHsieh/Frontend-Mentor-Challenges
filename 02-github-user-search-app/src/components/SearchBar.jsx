@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import styled from "styled-components";
 import iconSearch from "src/assets/icon-search.svg";
+import { fetchUserData } from "src/api"; // 導入 API 函數
 
 const SearchForm = styled.form`
   margin-bottom: 16px;
@@ -44,19 +45,24 @@ const SearchBtn = styled.button`
   cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
 `;
 
-export default function SearchBar() {
-  const [inputValue, setInputValue] = useState("")
+export default function SearchBar({ setUserData }) {
+  const [inputValue, setInputValue] = useState("");
 
   const handleInputChange = (e) => {
-    setInputValue(e.target.value)
-  }
+    setInputValue(e.target.value);
+  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    if(inputValue.trim()) {
-      console.log('Search for:', inputValue)
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (inputValue.trim()) {
+      try {
+        const data = await fetchUserData(inputValue);
+        setUserData(data); // 更新使用者資料
+      } catch (err) {
+        console.log(err);
+      }
     }
-  }
+  };
 
   return (
     <SearchForm onSubmit={handleSubmit}>

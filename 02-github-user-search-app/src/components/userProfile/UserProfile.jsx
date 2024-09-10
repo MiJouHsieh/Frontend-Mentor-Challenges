@@ -17,13 +17,15 @@ const UserProfileContainer = styled.div`
   align-items: start;
 `;
 
-export default function UserProfile() {
+export default function UserProfile({ userData }) {
+  // 接收 userData
   return (
     <UserProfileContainer>
-      <UserInfo />
-      <UserBio />
-      <UserStats />
-      <UserLinks />
+      <UserInfo userData={userData} />
+      {/* 傳遞 userData */}
+      <UserBio userData={userData} />
+      <UserStats userData={userData} />
+      <UserLinks userData={userData} />
     </UserProfileContainer>
   );
 }

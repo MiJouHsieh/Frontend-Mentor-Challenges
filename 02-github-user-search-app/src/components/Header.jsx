@@ -1,6 +1,4 @@
 import styled from "styled-components";
-// import { ReactComponent as MoonIcon } from "src/assets/icon-moon.svg";
-// import { ReactComponent as SunIcon } from "src/assets/icon-sun.svg";
 import MoonIcon from "src/assets/icon-moon.svg?react";
 import SunIcon from "src/assets/icon-sun.svg?react";
 

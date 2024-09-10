@@ -4,12 +4,6 @@ const UserBioText = styled.p`
   font-size: 13px;
 `;
 
-export default function UserBio() {
-  return (
-    <UserBioText>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore optio,
-      fugiat ducimus ipsam suscipit dolorem at animi, omnis veritatis incidunt
-      exercitationem!
-    </UserBioText>
-  );
+export default function UserBio({ userData }) {
+  return <UserBioText>{userData.bio}</UserBioText>;
 }

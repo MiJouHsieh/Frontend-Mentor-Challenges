@@ -13,14 +13,15 @@ const Container = styled.div`
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [userData, setUserData] = useState(null);
   const toggleTheme = () => setIsDarkMode(!isDarkMode);
 
   return (
     <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
       <Container>
         <Header toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
-        <SearchBar />
-        <UserProfile />
+        <SearchBar setUserData={setUserData} />
+        {userData && <UserProfile userData={userData} />} 
       </Container>
     </ThemeProvider>
   );
