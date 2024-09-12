@@ -1,15 +1,20 @@
 import { useState } from "react";
 import { Header, SearchBar } from "src/components";
 import UserProfile from "src/components/userProfile/UserProfile";
-import styled, { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import { lightTheme, darkTheme } from "src/theme/theme";
 
+const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: ${(props) => props.theme.bgColor};
+    color: ${(props) => props.theme.textColor};
+  }
+`;
+
 const Container = styled.div`
-  background-color: ${(props) => props.theme.bgColor};
-  color: ${(props) => props.theme.textColor};
   min-width: 375px;
-  padding: 30px 24px;
   width: 100%;
+  padding: 30px 24px;
   margin: 0 auto;
 
   @media screen and (min-width: 376px) {
@@ -29,10 +34,11 @@ function App() {
 
   return (
     <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+      <GlobalStyle />
       <Container>
         <Header toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
         <SearchBar setUserData={setUserData} />
-        {userData && <UserProfile userData={userData} />} 
+        {userData && <UserProfile userData={userData} />}
       </Container>
     </ThemeProvider>
   );
