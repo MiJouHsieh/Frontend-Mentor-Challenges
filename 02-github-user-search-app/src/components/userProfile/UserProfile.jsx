@@ -15,14 +15,16 @@ const UserProfileContainer = styled.div`
   background: ${(props) => props.theme.sectionBgColor};
   box-shadow: ${(props) => props.theme.boxShadowColor};
   align-items: start;
+  
+  @media screen and (min-width: 376px) {
+    padding: 40px;
+  }
 `;
 
 export default function UserProfile({ userData }) {
-  // 接收 userData
   return (
     <UserProfileContainer>
       <UserInfo userData={userData} />
-      {/* 傳遞 userData */}
       <UserBio userData={userData} />
       <UserStats userData={userData} />
       <UserLinks userData={userData} />

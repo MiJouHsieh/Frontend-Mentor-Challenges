@@ -9,6 +9,17 @@ const UserLinksContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+
+  @media screen and (min-width: 376px) {
+    height: 63px;
+    gap: 19px 0;
+    flex-wrap: wrap;
+  }
+
+  @media screen and (min-width: 769px) {
+    width: calc(100% - 9.875rem);
+    margin-left: 9.875rem;
+  }
 `;
 const UserLinksItem = styled.div`
   margin-bottom: 16px;
@@ -39,12 +50,18 @@ const UserLinksItem = styled.div`
       props.isUnavailable ? "#A5B4CD" : "inherit"}; /* 動態改變顏色 */
     a {
       color: ${(props) => props.theme.textColor};
-      
+
       &:hover,
       &:focus {
         text-decoration: underline;
       }
     }
+  }
+
+  @media screen and (min-width: 376px) {
+    margin-bottom: 0;
+    width: 50%;
+    font-size: 15px;
   }
 `;
 

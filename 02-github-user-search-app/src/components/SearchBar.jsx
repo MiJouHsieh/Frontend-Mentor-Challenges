@@ -12,14 +12,34 @@ const SearchForm = styled.form`
   border-radius: 15px;
   background: ${(props) => props.theme.sectionBgColor};
   box-shadow: ${(props) => props.theme.boxShadowColor};
-  span,
-  img {
-    width: 20px;
-    height: 20px;
+  div {
+    margin:  0 10px 0 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+    span {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  @media screen and (min-width: 376px) {
+    margin-bottom: 24px;
+    padding: 9.5px;
+
+    span,
+    img {
+      width: 24px;
+      height: 24px;
+    }
   }
 `;
 const Input = styled.input`
+  flex-grow: 1;
   background: ${(props) => props.theme.sectionBgColor};
+  width: 184px;
   color: ${(props) => props.theme.inputValueColor};
   border: 0px;
   &::placeholder {
@@ -30,7 +50,11 @@ const Input = styled.input`
   &:focus {
     outline: 1px solid ${(props) => props.theme.sectionBgColor};
   }
-  width: 184px;
+  @media screen and (min-width: 376px) {
+    font-size: 18px;
+    line-height: 25px;
+    width: 100%;
+  }
 `;
 
 const SearchBtn = styled.button`
@@ -43,6 +67,12 @@ const SearchBtn = styled.button`
     props.disabled ? props.theme.searchBtnBgColor : "#60ABFF"};
   border-radius: 10px;
   cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
+
+  @media screen and (min-width: 376px) {
+    width: 106px;
+    height: 50px;
+
+  }
 `;
 
 export default function SearchBar({ setUserData }) {
@@ -57,7 +87,7 @@ export default function SearchBar({ setUserData }) {
     if (inputValue.trim()) {
       try {
         const data = await fetchUserData(inputValue);
-        setUserData(data); // 更新使用者資料
+        setUserData(data);
       } catch (err) {
         console.log(err);
       }
@@ -66,15 +96,17 @@ export default function SearchBar({ setUserData }) {
 
   return (
     <SearchForm onSubmit={handleSubmit}>
-      <span>
-        <img src={iconSearch} alt="search input" />
-      </span>
-      <Input
-        type="text"
-        placeholder="Search GitHub username..."
-        value={inputValue}
-        onChange={handleInputChange}
-      />
+      <div>
+        <span>
+          <img src={iconSearch} alt="search input" />
+        </span>
+        <Input
+          type="text"
+          placeholder="Search GitHub username..."
+          value={inputValue}
+          onChange={handleInputChange}
+        />
+      </div>
       <SearchBtn disabled={inputValue.length === 0}>Search</SearchBtn>
     </SearchForm>
   );

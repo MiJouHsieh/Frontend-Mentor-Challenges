@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const UserStatsContainer = styled.div`
   margin-bottom: 24px;
+  padding: 0 32px;
   background: ${(props) => props.theme.userStatsBgColor};
   display: flex;
   width: 100%;
@@ -9,6 +10,14 @@ const UserStatsContainer = styled.div`
   border-radius: 10px;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (min-width: 376px) {
+    margin-bottom: 30px;
+  }
+  @media screen and (min-width: 769px) {
+    margin-left: 9.875rem;
+    width: calc(100% - 9.875rem);
+  }
 `;
 
 const UserStatsItem = styled.div`
@@ -16,6 +25,7 @@ const UserStatsItem = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: start;
   text-align: center;
   flex-grow: 1;
   .title {
@@ -27,6 +37,15 @@ const UserStatsItem = styled.div`
     font-size: 16px;
     font-weight: bold;
     color: ${(props) => props.theme.userStatsValueColor};
+  }
+
+  @media screen and (min-width: 376px) {
+    .title {
+      font-size: 13px;
+    }
+    .value {
+      font-size: 22px;
+    }
   }
 `;
 
