@@ -69,6 +69,7 @@ const AccountName = styled.p`
   }
 `;
 export default function UserInfo({ userData }) {
+  const options = { year: "numeric", month: "short", day: "numeric" }; 
   return (
     <UserInfoContainer>
       <UserAvatarContainer>
@@ -81,7 +82,10 @@ export default function UserInfo({ userData }) {
             <a href={userData.html_url}>@{userData.login}</a>
           </AccountName>
         </div>
-        <p>Joined {new Date(userData.created_at).toLocaleDateString()}</p>
+        <p>
+          Joined{" "}
+          {new Date(userData.created_at).toLocaleDateString("en-GB", options)}
+        </p>
       </UserInfoTextContainer>
     </UserInfoContainer>
   );
