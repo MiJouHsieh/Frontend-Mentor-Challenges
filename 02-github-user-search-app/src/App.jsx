@@ -32,12 +32,20 @@ function App() {
   const [userData, setUserData] = useState(null);
   const toggleTheme = () => setIsDarkMode(!isDarkMode);
 
+  const handleSetUserData = (data) => {
+    if (!data) {
+      setUserData(null);
+    } else {
+      setUserData(data);
+    }
+  };
+
   return (
     <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
       <GlobalStyle />
       <Container>
         <Header toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
-        <SearchBar setUserData={setUserData} />
+        <SearchBar setUserData={handleSetUserData} />
         {userData && <UserProfile userData={userData} />}
       </Container>
     </ThemeProvider>

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import styled from "styled-components";
 import iconSearch from "src/assets/icon-search.svg";
-import { fetchUserData } from "src/api"; // 導入 API 函數
+import { fetchUserData } from "src/api";
 
 const SearchForm = styled.form`
   margin-bottom: 16px;
@@ -75,11 +75,20 @@ const SearchBtn = styled.button`
   }
 `;
 
+const ErrorMessage = styled.span`
+  color: red;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 10px;
+`;
+
 export default function SearchBar({ setUserData }) {
   const [inputValue, setInputValue] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
+    setErrorMessage("")
   };
 
   const handleSubmit = async (e) => {
@@ -87,27 +96,38 @@ export default function SearchBar({ setUserData }) {
     if (inputValue.trim()) {
       try {
         const data = await fetchUserData(inputValue);
-        setUserData(data);
+        if (!data) {
+          setErrorMessage("No results");
+          setUserData(null); 
+        } else {
+          setUserData(data);
+          setErrorMessage("");
+        }
       } catch (err) {
         console.log(err);
+        setErrorMessage("No results");
+        setUserData(null); 
       }
     }
   };
 
   return (
-    <SearchForm onSubmit={handleSubmit}>
-      <div>
-        <span>
-          <img src={iconSearch} alt="search input" />
-        </span>
-        <Input
-          type="text"
-          placeholder="Search GitHub username..."
-          value={inputValue}
-          onChange={handleInputChange}
-        />
-      </div>
-      <SearchBtn disabled={inputValue.length === 0}>Search</SearchBtn>
-    </SearchForm>
+    <>
+      <SearchForm onSubmit={handleSubmit}>
+        <div>
+          <span>
+            <img src={iconSearch} alt="search input" />
+          </span>
+          <Input
+            type="text"
+            placeholder="Search GitHub username..."
+            value={inputValue}
+            onChange={handleInputChange}
+          />
+        </div>
+        <SearchBtn disabled={inputValue.length === 0}>Search</SearchBtn>
+      </SearchForm>
+      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
+    </>
   );
 }

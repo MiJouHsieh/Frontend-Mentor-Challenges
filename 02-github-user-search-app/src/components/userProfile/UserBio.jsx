@@ -12,7 +12,7 @@ const UserBioText = styled.p`
 export default function UserBio({ userData }) {
   return (
     <UserBioText>
-      {userData.bio ? userData.bio : "This profile has no"}
+      {userData.bio ? userData.bio : "This profile has no bio"}
     </UserBioText>
   )
 }
