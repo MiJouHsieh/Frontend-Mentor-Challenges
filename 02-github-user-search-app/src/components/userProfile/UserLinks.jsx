@@ -26,18 +26,17 @@ const UserLinksItem = styled.div`
   display: flex;
   align-items: start;
   height: 20px;
+  &:hover,
+  &:focus {
+    color: ${(props) => props.theme.themeToggleButtonHoverColor};
+  }
   span.link-icon {
     margin-right: 13px;
     width: 20px;
     height: 20px;
     svg {
       color: ${(props) =>
-        props.isUnavailable ? "#A5B4CD" : "inherit"}; /* 動態改變顏色 */
-      &:hover,
-      &:focus {
-        text-decoration: underline;
-        color: ${(props) => props.theme.themeToggleButtonHoverColor};
-      }
+        props.isUnavailable ? "#A5B4CD" : "inherit"};
     }
   }
 
@@ -47,7 +46,7 @@ const UserLinksItem = styled.div`
     overflow: hidden;
     text-overflow: ellipsis;
     color: ${(props) =>
-      props.isUnavailable ? "#A5B4CD" : "inherit"}; /* 動態改變顏色 */
+      props.isUnavailable ? "#A5B4CD" : "inherit"};
     a {
       color: ${(props) => props.theme.textColor};
 
@@ -75,7 +74,7 @@ export default function UserLinks({ userData }) {
         </span>
         <h4 className="link">{userData.location || "Not available"}</h4>
       </UserLinksItem>
-      <UserLinksItem isUnavailable={!userData.website}>
+      <UserLinksItem isUnavailable={!userData.blog}>
         <span className="link-icon">
           <IconWebsite />
         </span>
@@ -95,7 +94,7 @@ export default function UserLinks({ userData }) {
         </span>
         <h4 className="link">{userData.twitter || "Not available"}</h4>
       </UserLinksItem>
-      <UserLinksItem>
+      <UserLinksItem isUnavailable={!userData.company}>
         <span className="link-icon">
           <IconCompany />
         </span>
