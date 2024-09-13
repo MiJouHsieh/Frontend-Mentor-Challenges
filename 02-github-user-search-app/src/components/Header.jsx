@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import styled from "styled-components";
 import MoonIcon from "src/assets/icon-moon.svg?react";
 import SunIcon from "src/assets/icon-sun.svg?react";
@@ -13,9 +14,24 @@ const HeaderContainer = styled.header`
 
 const H1 = styled.h1`
   color: ${(props) => props.theme.appNameColor};
-`
+`;
 
-const ThemeToggleButton = styled.button`
+const ThemeToggleButton = ({ toggleTheme, isDarkMode }) => {
+  const memoizedButton = useMemo(() => (
+    <Button
+      onClick={toggleTheme}
+      aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+    >
+      <span>{isDarkMode ? "LIGHT" : "DARK"}</span>
+      {isDarkMode ? <SunIcon /> : <MoonIcon />}
+    </Button>
+  ),
+  [toggleTheme, isDarkMode])
+
+  return memoizedButton;
+}
+
+const Button = styled.button`
   display: flex;
   background: none;
   border: none;
@@ -51,13 +67,7 @@ const Header = ({ toggleTheme, isDarkMode }) => {
   return (
     <HeaderContainer>
       <H1>devfinder</H1>
-      <ThemeToggleButton
-        onClick={toggleTheme}
-        aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
-      >
-        <span>{isDarkMode ? "LIGHT" : "DARK"}</span>
-        {isDarkMode ? <SunIcon /> : <MoonIcon />}
-      </ThemeToggleButton>
+      <ThemeToggleButton toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
     </HeaderContainer>
   );
 };
