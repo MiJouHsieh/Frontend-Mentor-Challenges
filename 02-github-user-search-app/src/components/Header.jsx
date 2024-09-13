@@ -29,18 +29,19 @@ const ThemeToggleButton = styled.button`
   color: ${(props) => props.theme.themeToggleButtonColor};
   cursor: pointer;
 
-  &:hover,
-  &:focus {
-    background: none;
-    color: ${(props) => props.theme.themeToggleButtonHoverColor};
-  }
-
   svg {
     width: 20px;
     height: 20px;
     color: ${(props) => props.theme.themeToggleButtonColor};
-    &:hover,
-    &:focus {
+  }
+
+  &:hover,
+  &:focus {
+    background: none;
+    color: ${(props) => props.theme.themeToggleButtonHoverColor};
+
+    span,
+    svg {
       color: ${(props) => props.theme.themeToggleButtonHoverColor};
     }
   }
@@ -55,11 +56,7 @@ const Header = ({ toggleTheme, isDarkMode }) => {
         aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
       >
         <span>{isDarkMode ? "LIGHT" : "DARK"}</span>
-        {isDarkMode ? (
-          <SunIcon />
-        ) : (
-          <MoonIcon />
-        )}
+        {isDarkMode ? <SunIcon /> : <MoonIcon />}
       </ThemeToggleButton>
     </HeaderContainer>
   );
