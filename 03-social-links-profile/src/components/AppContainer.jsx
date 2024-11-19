@@ -1,7 +1,9 @@
+import Main from 'src/components/Main'
+
 function AppContainer() {
   return(
     <>
-      <h1>profile</h1>
+      <Main />
     </>
   )
 }
