@@ -8,6 +8,10 @@ const ImageContainer = styled.div`
   img {
     width: 100%;
   }
+
+  @media screen and (min-width: 376px) {
+    height: 220px;
+  }
 `;
 
 const TopImage = () => {

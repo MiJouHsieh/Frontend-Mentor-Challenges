@@ -3,7 +3,6 @@ import  TopImage from "src/components/TopImage";
 import styled from "styled-components";
 
 const StyledContainer = styled.div`
-  outline: 1px solid red;
   border-radius: 20px;
   width: 100%;
   max-width: 327px;
@@ -13,6 +12,12 @@ const StyledContainer = styled.div`
   flex-direction: column;
   align-items: center;
   overflow: hidden;
+  box-shadow: 0px 10px 20px rgba(100, 100, 255, 0.2);
+
+  @media screen and (min-width: 376px) {
+    max-width: 450px;
+    height: 697px;
+  }
 `;
 
 const InfoContainer = styled.div`
@@ -21,6 +26,10 @@ const InfoContainer = styled.div`
   flex-direction: column;
   gap: 24px;
   align-items: center;
+  @media screen and (min-width: 376px) {
+    padding: 45px 0;
+    gap: 32px;
+  }
 `;
 
 const OrderPage = () => {

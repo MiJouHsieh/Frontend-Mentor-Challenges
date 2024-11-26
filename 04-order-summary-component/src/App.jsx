@@ -2,9 +2,7 @@ import OrderPage from "src/components/OrderPage";
 
 function App() {
   return (
-    <>
-      <OrderPage />
-    </>
+    <OrderPage />
   )
 }
 

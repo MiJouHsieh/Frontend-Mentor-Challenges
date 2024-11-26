@@ -5,7 +5,7 @@
   font-size: 16px;
 
   color: var(--desaturated-blue);
-  background-color: var(--pale-blue);
+  /* background-color: var(--pale-blue); */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,6 +15,7 @@
   --pale-blue: #E0E8FF;
   --very-pale-blue: #F5F7FF;
   --bright-blue: #382AE1;
+  --violet-blue: #766CF1;
   --desaturated-blue: #717FA6;
   --dark-blue: #1F2E55;
   --white: #ffffff;
@@ -26,15 +27,6 @@
   box-sizing: border-box;
 }
 
-a {
-  font-weight: 700;
-  color: var(--bright-blue);
-  text-decoration: inherit;
-}
-a:hover {
-  color: #766CF1;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -44,6 +36,15 @@ body {
   place-items: center;
   min-width: 375px;
   min-height: 100vh;
+  font-family: "Red Hat Display", serif;
+  background-image: url('src/assets/images/pattern-background-mobile.svg');
+  background-repeat: no-repeat; /* 避免圖片重複 */
+  background-size: cover; /* 確保圖片覆蓋整個背景 */
+  background-position: center; /* 讓圖片居中顯示 */
+  height: 100vh; /* 背景高度覆蓋整個視窗 */
+  @media screen and (min-width: 376px) {
+    background-image: url('src/assets/images/pattern-background-desktop.svg');
+  }
 }
 
 h1 {
@@ -60,14 +61,8 @@ button {
   font-family: inherit;
   background-color: var(--bright-blue);
   cursor: pointer;
-  transition: border-color 0.25s;
   color: var(--white);
 }
 button:hover {
-  /* border-color: #646cff; */
   background-color: #766CF1;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }

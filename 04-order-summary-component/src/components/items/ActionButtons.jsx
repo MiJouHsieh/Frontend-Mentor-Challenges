@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
 const ButtonContainer = styled.div`
-  outline: 1px solid BLUE;
   width: 85%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media screen and (min-width: 376px) {
+    width: 80%;
+  }
 `;
 const Button = styled.button`
   margin-bottom: 24px;
@@ -37,7 +39,6 @@ const CancelButton = styled.button`
     background-color: transparent;
   }
 `;
-
 
 const ActionButtons = () => {
   return (

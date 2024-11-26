@@ -3,23 +3,30 @@ import MusicIcon from 'src/assets/images/icon-music.svg'
 
 const DetailsContainer = styled.div`
   padding: 16px;
-  // outline: 1px solid red;
   border-radius: 11px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   background-color: var(--very-pale-blue);
-  width: 85%;
   height: 81px;
+  width: 85%;
+  div {
+    display: flex;
+  }
+
+  @media screen and (min-width: 376px) {
+    height: 98px;
+    width: 80%;
+  }
 `;
 
 const MusicIconContainer = styled.div`
   width: 48px;
   height: 48px;
+  margin-right: 20px;
 `;
 
 const DetailsInfo = styled.div`
-  // outline: 1px solid red;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -35,7 +42,11 @@ const DetailsInfo = styled.div`
     font-weight: 500;
     color: var(--desaturated-blue);
   }
+  @media screen and (min-width: 376px) {
+    font-size: 16px;
+  }
 `;
+
 const ChangeButton = styled.button`
   padding: 0;
   display: flex; /* 使用 Flexbox */
@@ -56,24 +67,28 @@ const ChangeButton = styled.button`
   &:hover,
   &:focus,
   &:active {
-    color: var(--dark-blue);
+    color: var(--violet-blue);
     border: 0px solid transparent;
     background-color: transparent;
+  }
+
+  @media screen and (min-width: 376px) {
+    font-size: 14px;
   }
 `;
 const OrderDetails = () => {
   return (
     <DetailsContainer>
-      <MusicIconContainer>
-        <img src={MusicIcon} alt="Music Icon" />
-      </MusicIconContainer>
-      <DetailsInfo>
-        <h3>Annual Plan</h3>
-        <p>$59.99/year</p>
-      </DetailsInfo>
-      <ChangeButton>
-        Change
-      </ChangeButton>
+      <div>
+        <MusicIconContainer>
+          <img src={MusicIcon} alt="Music Icon" />
+        </MusicIconContainer>
+        <DetailsInfo>
+          <h3>Annual Plan</h3>
+          <p>$59.99/year</p>
+        </DetailsInfo>
+      </div>
+      <ChangeButton>Change</ChangeButton>
     </DetailsContainer>
   );
 };
