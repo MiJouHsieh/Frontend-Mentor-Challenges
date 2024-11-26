@@ -1,4 +1,4 @@
-import OrderPage from './components/OrderPage'
+import OrderPage from "src/components/OrderPage";
 
 function App() {
   return (
