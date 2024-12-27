@@ -1,0 +1,5 @@
+export { default as MainPage } from './MainPage'
+export { default as ProductCard } from './ProductCard'
+export { default as OrderModal} from './OrderModal'
+export { default as AddToCartButton} from './AddToCartButton'
+export { default as ProductInfo} from './ProductInfo'
