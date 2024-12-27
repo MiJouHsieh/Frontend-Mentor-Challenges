@@ -8,7 +8,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
+  
   color: hsl(14, 65%, 9%);
   background-color: hsl(20, 50%, 98%);
   
@@ -17,11 +17,11 @@
   --green: hsl(159, 69%, 38%);
   --red: hsl(14, 86%, 42%);
   --rose-50: hsl(20, 50%, 98%);
-  --Rose-100: hsl(13, 31%, 94%);
-  --Rose-300: hsl(14, 25%, 72%);
-  --Rose-400: hsl(7, 20%, 60%);
-  --Rose-500: hsl(12, 20%, 44%);
-  --Rose-900: hsl(14, 65%, 9%);
+  --rose-100: hsl(13, 31%, 94%);
+  --rose-300: hsl(14, 25%, 72%);
+  --rose-400: hsl(7, 20%, 60%);
+  --rose-500: hsl(12, 20%, 44%);
+  --rose-900: hsl(14, 65%, 9%);
 }
 
 * {
@@ -33,8 +33,11 @@
 body {
   display: flex;
   place-items: center;
+  justify-content: center;
+
   min-width: 375px;
   min-height: 100vh;
+  letter-spacing: 0;
 }
 
 /* a {
