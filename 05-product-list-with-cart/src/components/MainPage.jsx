@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import ProductCard from "src/components/ProductCard";
+import Cart from "src/components/Cart";
+
 
 const MainPageContainer = styled.div`
   outline: 5px red solid;
@@ -23,6 +25,7 @@ const MainPage = () => {
     <MainPageContainer>
       <Header>Desserts</Header>
       <ProductCard />
+      <Cart />
     </MainPageContainer>
   );
 };
