@@ -22,17 +22,14 @@ const ImageContainer = styled.div`
   }
 `;
 
-const ProductCard = () => {
+const ProductCard = ({ image, name, category, price }) => {
   return (
     <ProductCardContainer>
       <ImageContainer>
-        <img
-          src="src/assets/images/image-waffle-mobile.jpg"
-          alt="Product Image"
-        />
+        <img src={image} alt={name} />
       </ImageContainer>
       <AddToCartButton />
-      <ProductInfo />
+      <ProductInfo category={category} name={name} price={price} />
     </ProductCardContainer>
   );
 };

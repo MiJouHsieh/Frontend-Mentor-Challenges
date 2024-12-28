@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import ProductCard from "src/components/ProductCard";
 import Cart from "src/components/Cart";
-
+import productData from "src/data.json";
 
 const MainPageContainer = styled.div`
   outline: 5px red solid;
@@ -13,7 +13,6 @@ const MainPageContainer = styled.div`
 `;
 
 const Header = styled.header`
-  outline: 1px solid blue;
   color: var(--rose-900);
   font-size: 40px;
   font-weight: 700;
@@ -32,7 +31,15 @@ const MainPage = () => {
     <MainPageContainer>
       <Header>Desserts</Header>
       <ProductCardGroup>
-        <ProductCard />
+        {productData.map((product, index) => (
+          <ProductCard
+            key={product.index}
+            image={product.image.mobile}
+            name={product.name}
+            category={product.category}
+            price={product.price}
+          />
+        ))}
       </ProductCardGroup>
       <Cart />
     </MainPageContainer>

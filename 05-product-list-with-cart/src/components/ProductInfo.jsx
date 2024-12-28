@@ -15,12 +15,12 @@ const ProductPrice = styled.p`
   font-size: 16px;
   font-weight: 600;
 `;
-const ProductInfo = () => {
+const ProductInfo = ({ category, name, price }) => {
   return (
     <div>
-      <Type>Waffle</Type>
-      <ProductName>Waffle with Berries</ProductName>
-      <ProductPrice>$6.50</ProductPrice>
+      <Type>{category}</Type>
+      <ProductName>{name}</ProductName>
+      <ProductPrice>${price}</ProductPrice>
     </div>
   );
 };
