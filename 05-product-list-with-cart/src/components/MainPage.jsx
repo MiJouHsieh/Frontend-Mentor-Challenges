@@ -19,12 +19,21 @@ const Header = styled.header`
   font-weight: 700;
   line-height: 1.2;
 `;
-
+const ProductCardGroup = styled.div`
+  outline: 1px solid red;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+`;
+;
 const MainPage = () => {
   return (
     <MainPageContainer>
       <Header>Desserts</Header>
-      <ProductCard />
+      <ProductCardGroup>
+        <ProductCard />
+      </ProductCardGroup>
       <Cart />
     </MainPageContainer>
   );
