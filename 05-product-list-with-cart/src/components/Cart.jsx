@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import EmptyCartInfo from "src/components/EmptyCartInfo";
+// import CartEmptyState from "src/components/CartEmptyState";
+import CartFilledState from "src/components/CartFilledState";
+
 
 const CartSection = styled.section`
-  outline: 1px solid blue;
   padding: 24px;
   width: 100%;
   border-radius: 12px;
@@ -10,13 +11,9 @@ const CartSection = styled.section`
   display: flex;
   flex-direction: column;
   gap: 24px;
-  svg {
-    outline: 1px solid blue;
-  }
 `;
 
 const CartTitle = styled.p`
-  outline: 1px solid blue;
   color: var(--red);
   font-size: 24px;
   font-weight: 700;
@@ -27,7 +24,8 @@ const Cart = () => {
   return (
     <CartSection>
       <CartTitle>Your Cart (0)</CartTitle>
-      <EmptyCartInfo />
+      {/* <CartEmptyState /> */}
+      <CartFilledState />
     </CartSection>
   );
 };
