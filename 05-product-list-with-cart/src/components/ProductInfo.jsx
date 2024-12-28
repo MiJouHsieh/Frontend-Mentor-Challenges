@@ -20,7 +20,7 @@ const ProductInfo = ({ category, name, price }) => {
     <div>
       <Type>{category}</Type>
       <ProductName>{name}</ProductName>
-      <ProductPrice>${price}</ProductPrice>
+      <ProductPrice>${price.toFixed(2)}</ProductPrice>
     </div>
   );
 };
