@@ -40,6 +40,12 @@ body {
   letter-spacing: 0;
 }
 
+button {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
 /* a {
   font-weight: 500;
   color: #646cff;
