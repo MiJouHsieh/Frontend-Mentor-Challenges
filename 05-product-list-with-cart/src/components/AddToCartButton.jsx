@@ -26,7 +26,12 @@ const Button = styled.button`
   }
 `;
 
-const AddToCartButton = () => {
-  return <Button><IconAddToCart/>Add To Cart</Button>;
+const AddToCartButton = ({ onAddToCart }) => {
+  return (
+    <Button onClick={onAddToCart}>
+      <IconAddToCart />
+      Add To Cart
+    </Button>
+  );
 };
 export default AddToCartButton;

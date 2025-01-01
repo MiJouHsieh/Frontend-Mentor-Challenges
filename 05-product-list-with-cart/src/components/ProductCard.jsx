@@ -22,13 +22,13 @@ const ImageContainer = styled.div`
   }
 `;
 
-const ProductCard = ({ image, name, category, price }) => {
+const ProductCard = ({ image, name, category, price, onAddToCart }) => {
   return (
     <ProductCardContainer>
       <ImageContainer>
         <img src={image} alt={name} />
       </ImageContainer>
-      <AddToCartButton />
+      <AddToCartButton onAddToCart={onAddToCart} />
       <ProductInfo category={category} name={name} price={price} />
     </ProductCardContainer>
   );

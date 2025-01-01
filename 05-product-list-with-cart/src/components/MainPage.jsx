@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 import ProductCard from "src/components/ProductCard";
 import Cart from "src/components/Cart";
@@ -25,23 +26,29 @@ const ProductCardGroup = styled.div`
   flex-direction: column;
   gap: 24px;
 `;
-;
 const MainPage = () => {
+  const [cartItems, setCartItems] = useState(0)
+
+  function handleClick () {
+    setCartItems((prevCartItems) => prevCartItems+1);
+  }
+
   return (
     <MainPageContainer>
       <Header>Desserts</Header>
       <ProductCardGroup>
         {productData.map((product, index) => (
           <ProductCard
-            key={product.index}
+            key={product.name}
             image={product.image.mobile}
             name={product.name}
             category={product.category}
             price={product.price}
+            onAddToCart={handleClick}
           />
         ))}
       </ProductCardGroup>
-      <Cart />
+      <Cart cartItems={cartItems} />
     </MainPageContainer>
   );
 };

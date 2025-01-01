@@ -1,7 +1,6 @@
 import styled from "styled-components";
-// import CartEmptyState from "src/components/CartEmptyState";
+import CartEmptyState from "src/components/CartEmptyState";
 import CartFilledState from "src/components/CartFilledState";
-
 
 const CartSection = styled.section`
   padding: 24px;
@@ -20,12 +19,11 @@ const CartTitle = styled.p`
   line-height: 1.25;
 `;
 
-const Cart = () => {
+const Cart = ({ cartItems }) => {
   return (
     <CartSection>
-      <CartTitle>Your Cart (0)</CartTitle>
-      {/* <CartEmptyState /> */}
-      <CartFilledState />
+      <CartTitle>Your Cart ({cartItems})</CartTitle>
+      {cartItems>0 ? <CartFilledState /> : <CartEmptyState />}
     </CartSection>
   );
 };
