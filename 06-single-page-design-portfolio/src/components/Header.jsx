@@ -7,7 +7,7 @@ export function Header() {
       <a href="#">
         <Logo className={twMerge(`h-12 w-12`)} />
       </a>
-      <button className="bg-black w-44 h-11 text-white rounded-full">
+      <button className="bg-black w-44 h-11 text-white rounded-full hover:bg-galacticBlue font-bold text-sm">
         Free Consultation
       </button>
     </header>
