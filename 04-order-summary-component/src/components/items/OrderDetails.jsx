@@ -15,6 +15,7 @@ const DetailsContainer = styled.div`
   }
 
   @media screen and (min-width: 376px) {
+    padding: 24px;
     height: 98px;
     width: 80%;
   }
