@@ -3,11 +3,11 @@ import Logo from "src/assets/logo.svg?react";
 
 export function Header() {
   return (
-    <header className="flex justify-between items-center mb-8 outline outline-red-100">
+    <header className="mb-8 flex w-full items-center justify-between md:mb-16 1440:mb-[66px]">
       <a href="#">
-        <Logo className={twMerge(`h-12 w-12`)} />
+        <Logo className={twMerge(`h-12 w-12 md:h-16 md:w-16`)} />
       </a>
-      <button className="bg-black w-44 h-11 text-white rounded-full hover:bg-galacticBlue font-bold text-sm">
+      <button className="h-11 w-44 rounded-full bg-black text-sm font-bold text-white hover:bg-galacticBlue md:h-14 md:w-[228px]">
         Free Consultation
       </button>
     </header>
