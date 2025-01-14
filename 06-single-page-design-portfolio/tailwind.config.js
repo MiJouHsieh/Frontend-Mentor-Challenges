@@ -19,7 +19,7 @@ export default {
       },
       screens: {
         '1440': '1440px',
-      }
+      },
     },
   },
   plugins: [],
