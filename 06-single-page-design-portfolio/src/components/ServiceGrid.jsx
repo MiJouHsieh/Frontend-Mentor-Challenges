@@ -29,7 +29,7 @@ function GridCard({ className, title, children }) {
 
 export function ServiceGrid() {
   return (
-    <div className="grid-auto-rows-[182px] grid h-[1188px] w-full grid-cols-2 grid-rows-6 gap-6" >
+    <div className="grid-auto-rows-[182px] mb-[100px] grid h-[1188px] w-full grid-cols-2 grid-rows-6 gap-6 md:mb-[120px] md:h-[570px] md:grid-cols-4 md:grid-rows-3 1440:mb-[136px] 1440:h-[364px] 1440:grid-cols-6 1440:grid-rows-2">
       {SERVICE_LIST.map(({ id, className, title, icon }) => {
         const IconComponent = ICON_COMPONENTS[icon];
         return (
