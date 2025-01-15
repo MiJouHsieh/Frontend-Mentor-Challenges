@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,5 +7,26 @@
 @layer base {
   body {
     font-family: "Plus Jakarta Sans", serif;
+  }
+}
+
+@layer utilities {
+  .body-medium {
+    @apply text-[18px] font-medium leading-7 text-gray text-left
+  }
+  .mobile-btn {
+    @apply w-44 h-11 font-bold text-sm leading-7 text-lightCream
+  }
+  .md-btn {
+    @apply w-[228px] h-14 font-bold text-base leading-7 text-lightCream
+  }
+  .title-xs {
+    @apply font-bold text-[26px] text-black
+  }
+  .title-s {
+    @apply font-bold text-[32px] leading-10 text-black text-left
+  }
+  .title-m {
+    @apply font-bold text-[61px] leading-[51px] text-black
   }
 }
