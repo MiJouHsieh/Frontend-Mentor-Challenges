@@ -1,7 +1,7 @@
 import { twMerge } from "tw-merge";
 import Logo from "src/assets/logo.svg?react";
 
-export function Header() {
+export function Nav() {
   return (
     <header className="mb-8 flex w-full items-center justify-between md:mb-16 1440:mb-[66px]">
       <a href="#">
