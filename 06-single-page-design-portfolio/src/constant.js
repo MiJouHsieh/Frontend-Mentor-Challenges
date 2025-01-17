@@ -1,3 +1,10 @@
+import imageSlide1 from "src/assets/image-slide-1.jpg";
+import imageSlide2 from "src/assets/image-slide-2.jpg";
+import imageSlide3 from "src/assets/image-slide-3.jpg";
+import imageSlide4 from "src/assets/image-slide-4.jpg";
+import imageSlide5 from "src/assets/image-slide-5.jpg";
+
+
 export const SERVICE_LIST = [
   {
     id: 1,
@@ -36,3 +43,11 @@ export const SERVICE_LIST = [
     icon: "PatternMotionGraphics",
   },
 ];
+
+export const PORTFOLIO_LIST = [
+  {id: 1, src:imageSlide1},
+  {id: 2, src:imageSlide2},
+  {id: 3, src:imageSlide3},
+  {id: 4, src:imageSlide4},
+  {id: 5, src:imageSlide5},
+]
