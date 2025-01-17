@@ -4,30 +4,32 @@ import { PORTFOLIO_LIST } from "src/constant";
 
 export function PortfolioSection() {
   return (
-    <div className="mb-[100px] flex w-full flex-col items-center gap-8 outline outline-teal-100 md:mb-[120px] 1440:mb-[88px]">
+    <section className="mb-[100px] flex w-[calc(100%+32px)] flex-col items-center gap-8 overflow-hidden outline outline-teal-100 md:-mx-8 md:mb-[120px] md:w-[calc(100%+78px)] md:gap-14 1440:mb-[88px]">
       <h1 className="text-2xl font-bold">My Work</h1>
-      <div className="w-[108%] overflow-hidden">
-        <ul className="flex h-[180px] w-[1410px] justify-center gap-[15px]">
-          {PORTFOLIO_LIST.map((item) => {
-            return (
-              <li
-                key={item.id}
-                className="h-full w-[72%] object-contain md:w-[70%]"
-              >
-                <img src={item.src} alt="item image" />
-              </li>
-            );
-          })}
-        </ul>
+
+      <div className="flex w-[1410px] gap-[15px] overflow-hidden md:w-[2820px] md:gap-[30px]">
+        {PORTFOLIO_LIST.map((item) => {
+          return (
+            <div
+              key={item.id}
+              className="h-full w-[72%] object-contain md:w-[70%]"
+            >
+              <img
+                src={item.src}
+                alt={`Portfolio item ${item.id}`}
+              />
+            </div>
+          );
+        })}
       </div>
-      <div className="flex gap-4 outline outline-1">
-        <button className="flex h-16 w-16 items-center justify-center rounded-full bg-black">
+      <div className="flex gap-4">
+        <button className="flex h-16 w-16 items-center justify-center rounded-full bg-black hover:bg-galacticBlue">
           <ArrowLeft />
         </button>
-        <button className="flex h-16 w-16 items-center justify-center rounded-full bg-black">
+        <button className="flex h-16 w-16 items-center justify-center rounded-full bg-black hover:bg-galacticBlue">
           <ArrowRight />
         </button>
       </div>
-    </div>
+    </section>
   );
 }
