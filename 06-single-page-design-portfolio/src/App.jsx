@@ -3,6 +3,7 @@ import { HeroSection } from "src/components/HeroSection";
 import { ServiceGrid } from "src/components/ServiceGrid";
 import { AboutSection } from "src/components/AboutSection"; 
 import { PortfolioSection } from "src/components/PortfolioSection";
+import { BookingSection } from "src/components/BookingSection";
 
 function App() {    
   return (
@@ -12,6 +13,7 @@ function App() {
       <ServiceGrid />
       <AboutSection />
       <PortfolioSection />
+      <BookingSection />
     </div>
   );
 }
