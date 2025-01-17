@@ -27,6 +27,6 @@
     @apply font-bold text-[32px] leading-10 text-black text-left
   }
   .title-m {
-    @apply font-bold text-[61px] leading-[51px] text-black
+    @apply font-bold text-[40px] leading-[51px] text-black
   }
 }
