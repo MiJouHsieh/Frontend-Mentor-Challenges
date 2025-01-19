@@ -5,6 +5,9 @@
 @tailwind utilities;
 
 @layer base {
+   * {
+    @apply box-border;
+  }
   body {
     font-family: "Plus Jakarta Sans", serif;
   }
