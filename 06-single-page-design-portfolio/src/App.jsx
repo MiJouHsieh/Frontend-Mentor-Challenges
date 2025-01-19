@@ -7,12 +7,14 @@ import { BookingSection } from "src/components/BookingSection";
 
 function App() {    
   return (
-    <div className="mx-auto flex min-w-[375px] flex-col items-center p-4 md:items-end md:px-[39px] md:pt-[34px] 1440:max-w-[1110px] 1440:px-0">
+    <div className="relative mx-auto flex min-w-[375px] flex-col items-center p-4 md:items-end md:px-[39px] md:pt-[34px] 1440:max-w-[1110px] 1440:px-0">
       <Nav />
       <HeroSection />
       <ServiceGrid />
       <AboutSection />
-      <PortfolioSection />
+      <div className="relative  mb-[100px]  h-[338px] w-[calc(100%+32px)] md:mb-[120px] md:h-[576px] md:w-[calc(100%+78px)] 1440:mb-[88px] ">
+        <PortfolioSection />
+      </div>
       <BookingSection />
       <Nav />
     </div>
