@@ -20,6 +20,10 @@ export default {
       screens: {
         '1440': '1440px',
       },
+      width: {
+        mobile : `${5 * (270 + 15) - 15}px`,
+        tablet : `${5 * (540 + 30) - 30}px`,
+      }
     },
   },
   plugins: [],
