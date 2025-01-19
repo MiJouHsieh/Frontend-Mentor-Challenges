@@ -2,7 +2,7 @@ export function AboutSection() {
   return (
     <div className="mb-[100px] flex w-full flex-col items-center gap-10 md:mb-[120px] md:w-[111.88%] md:max-w-[1300px] md:flex-row md:justify-between md:gap-[69px] 1440:mb-[88px] 1440:w-full 1440:gap-[125px]">
       <div className="w-[88%] md:w-[47%] md:max-w-[445px] 1440:w-[40%]">
-        <img src="src/assets/image-amy.webp" alt="" />
+        <img src="src/assets/image-amy.png" alt="" />
       </div>
       <div className="flex w-full flex-col items-center gap-6 text-center md:w-[44%] 1440:w-[48%]">
         <h1 className="title-xs md:title-s 1440:title-m">
