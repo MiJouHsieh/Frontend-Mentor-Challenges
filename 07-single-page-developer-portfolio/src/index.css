@@ -1,11 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap')
-
-@tailwind base;
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap")
+  @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   body {
     font-family: "Space Grotesk", serif;
+  }
+}
+
+@layer utilities {
+  .title-xl {
+    @apply text-[88px] font-bold leading-[88px] tracking-[-2.5px]
+  }
+  .title-l {
+    @apply text-5xl font-bold leading-[56px] tracking-[-1.5px]
+  }
+  .title-m {
+    @apply text-2xl font-bold leading-8
+  }
+  .body-medium {
+    @apply text-lg font-medium leading-7
   }
 }
