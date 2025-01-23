@@ -1,5 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap")
-  @tailwind base;
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -11,15 +12,18 @@
 
 @layer utilities {
   .title-xl {
-    @apply text-[88px] font-bold leading-[88px] tracking-[-2.5px]
+    @apply text-[88px] font-bold leading-[88px] tracking-[-2.5px] text-white;
   }
   .title-l {
-    @apply text-5xl font-bold leading-[56px] tracking-[-1.5px]
+    @apply text-5xl font-bold leading-[56px] tracking-[-1.5px] text-white;
   }
   .title-m {
-    @apply text-2xl font-bold leading-8
+    @apply text-2xl font-bold leading-8 text-white;
   }
   .body-medium {
-    @apply text-lg font-medium leading-7
+    @apply text-lg font-medium leading-7 text-white;
+  }
+  .md-title {
+    @apply text-7xl font-bold leading-[72px] text-white text-start tracking-[-2.05px];
   }
 }

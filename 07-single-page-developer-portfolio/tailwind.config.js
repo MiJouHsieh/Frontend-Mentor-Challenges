@@ -13,6 +13,10 @@ export default {
         darkGray: "#242424",
         black: "#151515",
       },
+      screens: {
+        '1440': '1440px',
+        '900': '900px',
+      },
     },
   },
   plugins: [],
