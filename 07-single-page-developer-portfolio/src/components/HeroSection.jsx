@@ -4,7 +4,7 @@ import authorImageDesktop from "src/assets/image-profile-desktop.webp";
 
 export function HeroSection() {
   return (
-    <div className="relative flex w-full flex-col items-center gap-y-10 bg-red-500 md:absolute md:top-0 md:flex-row-reverse">
+    <div className="relative flex w-full flex-col items-center gap-y-10 bg-red-500 md:top-0 md:flex-row-reverse">
       <div className="max-h-[500px] w-[46.4%] overflow-hidden md:h-[600px] md:max-h-none md:w-[42%] 1440:h-[720px] 1440:w-[40%]">
         <img
           className="h-full w-full object-cover"
