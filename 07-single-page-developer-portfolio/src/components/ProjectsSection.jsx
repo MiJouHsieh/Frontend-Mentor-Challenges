@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
 import { projectItems } from "src/projectsData";
 
+
 function ProjectCard({ title, images, skills }) {
   return (
-    <div className="flex w-full flex-grow justify-between md:w-[45%]">
-      <div className="flex flex-col">
-        <div className="mb-5 w-full object-cover">
+    <article className="relative flex w-full flex-grow justify-between md:w-[45%]">
+      <div className="group flex flex-col">
+        <div className="relative mb-5 w-full object-cover">
           <img
             src={images[0]}
             alt={`${title} screenshot`}
@@ -17,13 +18,19 @@ function ProjectCard({ title, images, skills }) {
           <h2 className="title-m mb-[7px]">{title}</h2>
           <div className="body-medium flex gap-x-[18px]">
             {skills.map((skill, index) => (
-              <span key={`${skill}-${index}`}>{skill}</span>
+              <span
+                key={`${skill}-${index}`}
+                role="listitem"
+                aria-label={`Skill: ${skill}`}
+              >
+                {skill}
+              </span>
             ))}
           </div>
         </div>
-        <div className="justify-star 1440:none flex">
+        <div className="btn-1440 will-change-opacity-transform flex justify-start">
           <button
-            className="borderStyle mr-[30px]"
+            className="borderStyle mr-[30px] 1440:m-0"
             aria-label={`View project for ${title}`}
           >
             VIEW PROJECT
@@ -36,15 +43,9 @@ function ProjectCard({ title, images, skills }) {
           </button>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
-// ViewProjectButton, ViewCodeButton
-// function ProjectButton() {
-//   return (
-// <div className="flex">hello</div>
-//   )
-// }
 
 export function ProjectsSection() {
   return (
