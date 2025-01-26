@@ -29,14 +29,17 @@
   .section-title {
     @apply m-0 text-[40px] font-bold leading-10 tracking-[-1.14px] text-white;
   }
+  .btnText-size16 {
+    @apply text-base leading-[26px] tracking-[2.29px] font-bold 
+  }
   .text-size16 {
-    @apply text-base leading-[26px];
+    @apply text-base leading-[26px] tracking-[2.29px]
   }
   .borderStyle {
     @apply h-[38px] border-b-2 border-b-green hover:text-green;
   }
   .btn-1440 {
-    @apply 1440:absolute 1440:inset-0 1440:h-[82%] 1440:flex-col 1440:items-center 1440:justify-center 1440:gap-y-12 1440:bg-black 1440:bg-opacity-80 1440:opacity-0 1440:transition-opacity 1440:hover:cursor-pointer 1440:group-hover:opacity-100;
+    @apply 1440:absolute 1440:inset-0 1440:h-[83%] 1440:flex-col 1440:items-center 1440:justify-center 1440:gap-y-12 1440:bg-black 1440:bg-opacity-80 1440:opacity-0 1440:transition-opacity 1440:hover:cursor-pointer 1440:group-hover:opacity-100;
   }
   .will-change-opacity-transform {
     will-change: opacity, transform;

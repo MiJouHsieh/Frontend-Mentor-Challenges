@@ -1,13 +1,13 @@
 import PropTypes from "prop-types";
 import { projectItems } from "src/projectsData";
 
-
 function ProjectCard({ title, images, skills }) {
   return (
-    <article className="relative flex w-full flex-grow justify-between md:w-[45%]">
-      <div className="group flex flex-col">
+    <article className="relative flex w-full flex-grow justify-center outline outline-orange-300 md:w-[45%]">
+      <div className="group flex w-full flex-col">
         <div className="relative mb-5 w-full object-cover">
           <img
+            className="w-full"
             src={images[0]}
             alt={`${title} screenshot`}
             srcSet={`${images[0]} 768w, ${images[1]} 1440w, ${images[1]} 1920w`}
@@ -55,7 +55,7 @@ export function ProjectsSection() {
           Project
         </h1>
         <button
-          className="text-size16 borderStyle w-[120px] pb-[10px] tracking-[2.29px]"
+          className="btnText-size16 borderStyle w-[120px] pb-[10px]"
           aria-label="contact author"
         >
           CONTACT ME
