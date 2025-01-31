@@ -56,7 +56,7 @@ export function ProjectsSection() {
         </h1>
         <button
           className="btnText-size16 borderStyle w-[120px] pb-[10px]"
-          aria-label="contact author"
+          aria-label="contact me"
         >
           CONTACT ME
         </button>
