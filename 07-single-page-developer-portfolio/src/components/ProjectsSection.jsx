@@ -3,7 +3,7 @@ import { projectItems } from "src/projectsData";
 
 function ProjectCard({ title, images, skills }) {
   return (
-    <article className="relative flex w-full flex-grow justify-center outline outline-orange-300 md:w-[45%]">
+    <article className="relative flex w-full flex-grow justify-center md:w-[45%]">
       <div className="group flex w-full flex-col">
         <div className="relative mb-5 w-full object-cover">
           <img
