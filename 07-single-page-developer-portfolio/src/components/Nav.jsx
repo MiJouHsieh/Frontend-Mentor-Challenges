@@ -9,21 +9,20 @@ export function Nav() {
       <h1 className="text-2xl font-bold leading-8 tracking-[-0.33px] md:text-[32px] md:tracking-[-0.44px]">
         adamkeyes
       </h1>
-      <div className="flex w-full justify-between  md:w-[192px]">
+      <div className="flex w-full justify-between md:w-[192px]">
         <a href="#">
-          <IconGithub className="h-5 md:h-[25px]" />
+          <IconGithub className="iconStyle" />
         </a>
         <a href="#">
-          <IconFrontendMentor className="h-5 md:h-[25px]" />
+          <IconFrontendMentor className="iconStyle" />
         </a>
         <a href="#">
-          <IconLinkedin className="h-5 md:h-[25px]" />
+          <IconLinkedin className="iconStyle" />
         </a>
         <a href="#">
-          <IconTwitter className="h-5 md:h-[25px]" />
+          <IconTwitter className="iconStyle" />
         </a>
       </div>
     </>
   );
 }
-// import patternRings from "src/assets/pattern-rings.svg.svg?react";
