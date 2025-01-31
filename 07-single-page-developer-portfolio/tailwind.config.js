@@ -12,6 +12,7 @@ export default {
         green: "#4EE1A0",
         darkGray: "#242424",
         black: "#151515",
+        red:"#FF6F5B"
       },
       screens: {
         '1440': '1440px',
@@ -19,6 +20,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: []
 }
-
