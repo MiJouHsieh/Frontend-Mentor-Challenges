@@ -30,10 +30,10 @@
     @apply m-0 text-[40px] font-bold leading-10 tracking-[-1.14px] text-white;
   }
   .btnText-size16 {
-    @apply text-base leading-[26px] tracking-[2.29px] font-bold 
+    @apply text-base font-bold leading-[26px] tracking-[2.29px];
   }
   .text-size16 {
-    @apply text-base leading-[26px] tracking-[2.29px]
+    @apply text-base leading-[26px] tracking-[2.29px];
   }
   .borderStyle {
     @apply h-[38px] border-b-2 border-b-green hover:text-green;
@@ -43,5 +43,19 @@
   }
   .will-change-opacity-transform {
     will-change: opacity, transform;
+  }
+  .iconStyle {
+    @apply h-5 hover:cursor-pointer hover:text-green md:h-[25px];
+  }
+
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #242424 inset !important;
+    box-shadow: 0 0 0px 1000px #242424 inset !important;
+    -webkit-text-fill-color: #ffffff !important;
+    caret-color: #ffffff !important;
+    color: #ffffff !important;
+  }
+  input {
+    color: #ffffff !important;
   }
 }
