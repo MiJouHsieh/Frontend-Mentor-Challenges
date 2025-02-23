@@ -16,6 +16,10 @@ export default {
         barlowCondensed: ['"Barlow Condensed"', 'serif'],
         bellefair: ['"Bellefair"', 'serif'],
       },
+      screens: {
+        '660':'660px',
+        '1440': '1440px',
+      }
     },
   },
   plugins: [],
