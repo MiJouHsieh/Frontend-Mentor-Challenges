@@ -6,7 +6,7 @@ export function Checkbox() {
       <input
         type="checkbox"
         id="custom-checkbox"
-        className="checkboxIconStyle peer relative shrink-0 appearance-none rounded-sm border-2 border-grey500 bg-white checked:border-0"
+        className="checkboxIconStyle peer relative shrink-0 appearance-none rounded-sm border-2 border-grey500 bg-white checked:border-transparent"
       />
 
       <label
@@ -15,7 +15,7 @@ export function Checkbox() {
       >
         I consent to being contacted by the team *
       </label>
-      <IconCheckboxCheck className="checkboxIconStyle absolute hidden peer-checked:block" />
+      <IconCheckboxCheck className="checkboxIconStyle pointer-events-none absolute hidden peer-checked:block" />
     </div>
   );
 }
