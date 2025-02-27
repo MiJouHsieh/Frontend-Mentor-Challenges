@@ -12,7 +12,10 @@ export default {
         green600: "#0C7D69",
         green200: "#E0F1E8",
         red: "#D73C3C"
-      }
+      }, 
+      screens: {
+        '1440': '1440px',
+      },
     },
   },
   plugins: [],
