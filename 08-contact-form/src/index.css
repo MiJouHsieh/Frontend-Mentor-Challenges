@@ -10,3 +10,21 @@
     background-color: #E0F1E8
   }
 }
+
+@layer utilities {
+  .title {
+    @apply text-[32px] font-bold leading-[100%] tracking-[-1px]
+  }
+  .body-s {
+    @apply text-base font-normal leading-[150%]
+  }
+  .body-m {
+    @apply text-lg font-normal leading-[150%] text-rose-400 
+  }
+  .body-m-bold {
+    @apply text-lg font-normal leading-[150%] text-white
+  }
+  .checkboxIconStyle {
+    @apply m-1.5 h-[18px] w-[18px] cursor-pointer 
+  }
+}
