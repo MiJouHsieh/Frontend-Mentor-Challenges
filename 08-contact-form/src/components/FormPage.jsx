@@ -3,7 +3,7 @@ import { QueryTypeSelect } from "src/components/QueryTypeSelect";
 import { FormTextarea } from "src/components/FormTextarea";
 import { Checkbox } from "src/components/Checkbox";
 import { SubmitButton } from "src/components/SubmitButton";
-import { Formik, Form } from "formik";
+import { Formik, Form } from "formik"; 
 import * as Yup from 'yup'
 
 export function FormPage() {
@@ -14,6 +14,7 @@ export function FormPage() {
           firstName: "",
           lastName: "",
           email: "",
+          acceptedTerms: false,
         }}
         validationSchema={Yup.object({
           firstName: Yup.string()
@@ -25,6 +26,12 @@ export function FormPage() {
           email: Yup.string()
             .email("Invalid email address")
             .required("Please enter a valid email address"),
+          acceptedTerms: Yup.boolean()
+            .required("Required")
+            .oneOf(
+              [true],
+              "To submit this form, please consent to being contacted",
+            ),
         })}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
@@ -33,9 +40,7 @@ export function FormPage() {
           }, 400);
         }}
       >
-        <Form
-          className="w-full min-w-[343px] rounded-2xl bg-white p-6 text-grey900 outline md:w-[690px] md:p-10 1440:w-[736px]"
-        >
+        <Form className="w-full min-w-[343px] rounded-2xl bg-white p-6 text-grey900 outline md:w-[690px] md:p-10 1440:w-[736px]">
           <h1 className="title mb-8">Contact Us</h1>
           <div className="flex flex-col space-y-6">
             <div className="space-y-6 md:flex md:justify-between md:gap-x-4 md:space-y-0">
@@ -60,7 +65,7 @@ export function FormPage() {
             <QueryTypeSelect />
             <FormTextarea />
           </div>
-          <Checkbox />
+          <Checkbox name="acceptedTerms"/>
           <SubmitButton />
         </Form>
       </Formik>
