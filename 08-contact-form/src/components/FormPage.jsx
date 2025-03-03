@@ -3,8 +3,8 @@ import { QueryTypeSelect } from "src/components/QueryTypeSelect";
 import { FormTextarea } from "src/components/FormTextarea";
 import { Checkbox } from "src/components/Checkbox";
 import { SubmitButton } from "src/components/SubmitButton";
-import { Formik, Form } from "formik"; 
-import * as Yup from 'yup'
+import { Formik, Form } from "formik";
+import * as Yup from "yup";
 
 export function FormPage() {
   return (
@@ -14,6 +14,7 @@ export function FormPage() {
           firstName: "",
           lastName: "",
           email: "",
+          message: "",
           acceptedTerms: false,
         }}
         validationSchema={Yup.object({
@@ -32,6 +33,7 @@ export function FormPage() {
               [true],
               "To submit this form, please consent to being contacted",
             ),
+          message: Yup.string().required("This field is required"),
         })}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
@@ -63,9 +65,13 @@ export function FormPage() {
             />
 
             <QueryTypeSelect />
-            <FormTextarea />
+            <FormTextarea
+              name="message"
+              as="textarea"
+              className="form-textarea"
+            />
           </div>
-          <Checkbox name="acceptedTerms"/>
+          <Checkbox name="acceptedTerms" />
           <SubmitButton />
         </Form>
       </Formik>
