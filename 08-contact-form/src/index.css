@@ -22,7 +22,7 @@
     @apply text-lg font-normal leading-[150%] text-grey900;
   }
   .body-m-bold {
-    @apply text-lg font-normal leading-[150%] text-white;
+    @apply text-lg font-bold leading-[150%] text-white;
   }
   .checkboxIconStyle {
     @apply m-[3px] h-[18px] w-[18px] cursor-pointer;
