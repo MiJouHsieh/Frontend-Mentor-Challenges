@@ -16,7 +16,7 @@ export function QueryTypeSelect({ name }) {
             values[field.name] === "general-enquiry"
               ? "border-green600 bg-green200"
               : "border-grey500"
-          } relative flex h-[51px] items-center space-x-3 rounded-lg border px-6 py-3 md:flex-1`}
+          } relative flex h-[51px] cursor-pointer items-center space-x-3 rounded-lg border px-6 py-3 md:flex-1`}
         >
           <input
             checked={values[field.name] === "general-enquiry"}
@@ -30,12 +30,15 @@ export function QueryTypeSelect({ name }) {
             }
           />
           <IconRadioSelected className="pointer-events-none absolute left-3 hidden peer-checked:block" />
-          <label htmlFor="general-enquiry" className="body-m">
+          <label
+            htmlFor="general-enquiry"
+            className="body-m cursor-pointer"
+          >
             Generl Enquiry
           </label>
         </div>
         <div
-          className={` ${values[field.name] === "support-request" ? "border-green600 bg-green200" : "border-grey500"} relative flex h-[51px] items-center space-x-3 rounded-lg border px-6 py-3 md:flex-1`}
+          className={` ${values[field.name] === "support-request" ? "border-green600 bg-green200" : "border-grey500"} relative flex h-[51px] cursor-pointer items-center space-x-3 rounded-lg border px-6 py-3 md:flex-1`}
         >
           <input
             checked={values[field.name] === "support-request"}
@@ -49,7 +52,10 @@ export function QueryTypeSelect({ name }) {
             }
           />
           <IconRadioSelected className="pointer-events-none absolute left-3 hidden peer-checked:block" />
-          <label htmlFor="support-request" className="body-m">
+          <label
+            htmlFor="support-request"
+            className="body-m cursor-pointer"
+          >
             Support Request
           </label>
         </div>

@@ -21,7 +21,7 @@ export function Checkbox({ ...props }) {
           className="checkbox-input body-s mx-4 flex w-full cursor-pointer items-center"
         >
           I consent to being contacted by the team
-          <span className="text-green600 ml-2">*</span>
+          <span className="ml-2 text-green600">*</span>
         </label>
         <IconCheckboxCheck className="checkboxIconStyle pointer-events-none absolute hidden peer-checked:block" />
       </div>
