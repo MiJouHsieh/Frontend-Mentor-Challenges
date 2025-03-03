@@ -6,7 +6,7 @@ export function Checkbox({ ...props }) {
 
   return (
     <div className="my-10 flex flex-col items-start gap-y-2">
-      <div className=" flex items-center">
+      <div className="flex items-center">
         <input
           type="checkbox"
           id="custom-checkbox"
@@ -20,7 +20,8 @@ export function Checkbox({ ...props }) {
           htmlFor="custom-checkbox"
           className="checkbox-input body-s mx-4 flex w-full cursor-pointer items-center"
         >
-          I consent to being contacted by the team *
+          I consent to being contacted by the team
+          <span className="text-green600 ml-2">*</span>
         </label>
         <IconCheckboxCheck className="checkboxIconStyle pointer-events-none absolute hidden peer-checked:block" />
       </div>

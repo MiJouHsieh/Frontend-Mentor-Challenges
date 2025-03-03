@@ -1,12 +1,15 @@
 import IconRadioSelected from "src/assets/icon-radio-selected.svg?react";
-import { useField, useFormikContext } from "formik"
+import { useField, useFormikContext } from "formik";
 
-export function QueryTypeSelect({name}) {
-  const { values, setFieldValue } = useFormikContext(); 
+export function QueryTypeSelect({ name }) {
+  const { values, setFieldValue } = useFormikContext();
   const [field, meta] = useField(name);
   return (
     <div className="flex flex-col space-y-4">
-      <label>Query Type</label>
+      <label>
+        Query Type
+        <span className="ml-2 text-green600">*</span>
+      </label>
       <div className="space-y-4 md:flex md:justify-between md:gap-x-4 md:space-y-0">
         <div
           className={`${
@@ -52,7 +55,7 @@ export function QueryTypeSelect({name}) {
         </div>
       </div>
       {meta.touched && meta.error ? (
-        <span className="error text-red body-s">{meta.error}</span>
+        <span className="error body-s text-red">{meta.error}</span>
       ) : null}
     </div>
   );
