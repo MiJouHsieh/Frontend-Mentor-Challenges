@@ -12,9 +12,9 @@ export default {
         blue900: "#0B0D17"
       },
       fontFamily: {
-        barlow: ['"Barlow Condensed"', 'serif'],
-        barlowCondensed: ['"Barlow Condensed"', 'serif'],
-        bellefair: ['"Bellefair"', 'serif'],
+        barlow: ["Barlow", "serif"],
+        barlowCondensed: ["Barlow Condensed", "serif"],
+        bellefair: ["Bellefair", "serif"],
       },
       screens: {
         '660':'660px',
