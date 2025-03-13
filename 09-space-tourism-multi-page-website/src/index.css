@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bellefair&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bellefair&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,36 +7,51 @@
 @layer base {
   body {
     font-family: "Bellefair", serif;
-    background-color: #0B0D17;
+    background-color: #0b0d17;
   }
 }
 
 @layer utilities {
   .title-1 {
-    @apply text-[144px] font-normal leading-[110px] tracking-[0px]
+    @apply text-[144px] font-normal leading-[110px] tracking-[0px];
   }
   .title-2 {
-    @apply text-[100px] font-normal leading-[110px] tracking-[0px]
+    @apply text-[100px] font-normal leading-[110px] tracking-[0px];
   }
   .title-3 {
-    @apply text-[56px] font-normal leading-[64px] tracking-[0px]
+    @apply text-[56px] font-normal leading-[64px] tracking-[0px];
   }
   .title-4 {
-    @apply text-[32px] font-normal leading-[37px] tracking-[0px]
+    @apply text-[32px] font-normal leading-[37px] tracking-[0px];
   }
   .title-5 {
-    @apply text-[28px] font-normal leading-[34px] tracking-[4px] font-barlowCondensed
+    @apply font-barlowCondensed text-[28px] font-normal leading-[34px] tracking-[4px];
   }
   .title-6 {
-    @apply text-[28px] font-normal leading-[32px] tracking-[0px]
+    @apply text-[28px] font-normal leading-[32px] tracking-[0px];
   }
   .title-7 {
-    @apply text-[14px] font-normal leading-[17px] tracking-[2px] font-barlowCondensed
+    @apply font-barlowCondensed text-[14px] font-normal leading-[17px] tracking-[2px];
   }
   .title-8 {
-    @apply text-[16px] font-normal leading-[19px] tracking-[2px] font-barlowCondensed
+    @apply font-barlowCondensed text-[16px] font-normal leading-[19px] tracking-[2px];
   }
   .title-9 {
-    @apply text-[18px] font-normal leading-[180%] tracking-[0px] font-barlow
+    @apply font-barlow text-[18px] font-normal leading-[180%] tracking-[0px];
+  }
+  .mobile-home-subtitle {
+    @apply text-center font-barlowCondensed text-[16px] font-normal leading-[19px] tracking-[2.4px] text-blue300;
+  }
+  .mobile-home-title {
+    @apply text-center text-[80px] font-normal leading-[92px] tracking-[0px] text-white;
+  }
+  .mobile-home-description {
+    @apply text-center font-barlow text-[15px] font-normal leading-[180%] tracking-[0px] text-blue300;
+  }
+  .explore-btn {
+    @apply h-36 w-36 rounded-full border-red-600 bg-white text-[18px] font-normal leading-[21px] tracking-[0] text-blue900 md:h-[272px] md:w-[272px];
+  }
+  .tablet-home-title {
+    @apply text-center text-[144px] font-normal leading-[165px] tracking-[0px] text-white;
   }
 }
