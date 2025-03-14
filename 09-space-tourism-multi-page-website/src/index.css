@@ -54,4 +54,10 @@
   .tablet-home-title {
     @apply text-center text-[144px] font-normal leading-[165px] tracking-[0px] text-white;
   }
+  .content-title {
+    @apply text-center text-[56px] font-normal uppercase leading-[64px] tracking-[0px] text-white
+  }
+ .page-title {
+  @apply space-x-6 text-center font-barlowCondensed text-[16px] uppercase leading-[19px] tracking-[2.4px] text-white md:text-start
+ }
 }
