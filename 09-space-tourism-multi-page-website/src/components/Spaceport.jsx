@@ -1,17 +1,10 @@
-import spaceportPortrait from "src/assets/technology/image-spaceport-portrait.jpg";
-
 import { Paginator } from "src/components/Paginator";
+
 export function Spaceport({ selectedTech, setSelectedTech }) {
   return (
     <>
-      <div className="flex h-[258px] w-[375px] items-end justify-center overflow-hidden md:h-[421px] md:w-[768px] 1440:h-[734px] 1440:w-[608px] 1440:items-center">
-        <img
-          className="h-[376px] w-full object-cover md:w-[768px] 1440:h-[600px]"
-          src={spaceportPortrait}
-          alt="launch vehicle image"
-        />
-      </div>
-      <div className="flex flex-col items-center space-y-10 px-6 outline outline-yellow-300 1440:flex-row 1440:items-start 1440:space-x-16 1440:space-y-0 1440:px-0">
+      <div className="h-[258px] w-[375px] bg-[url('/src/assets/technology/image-spaceport-landscape.jpg')] bg-cover bg-center md:h-[365px] md:w-[768px] 1440:h-[600px] 1440:w-[608px] 1440:bg-[url('/src/assets/technology/image-spaceport-portrait.jpg')]" />
+      <div className="flex flex-col items-center space-y-10 px-6 1440:flex-row 1440:items-start 1440:space-x-16 1440:space-y-0 1440:px-0">
         <Paginator
           selectedTech={selectedTech}
           setSelectedTech={setSelectedTech}
