@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import { ExploreButton } from "src/components/ExploreButton";
 export function HomePage() {
   return (
     <div className="relative flex h-screen w-full p-6 pt-[112px] md:px-10 md:py-32 md:pt-[224px] 1440:items-end 1440:justify-center">
@@ -18,9 +20,9 @@ export function HomePage() {
           </p>
         </div>
         <div className="flex h-[382px] w-full items-center justify-center md:h-[272px] 1440:justify-end">
-          <button className="explore-btn md:title-4">
-            EXPLORE
-          </button>
+          <Link to="/destination">
+            <ExploreButton />
+          </Link>
         </div>
       </div>
     </div>

@@ -52,7 +52,7 @@
     @apply text-center font-barlow text-[15px] font-normal leading-[180%] tracking-[0px] text-blue300;
   }
   .explore-btn {
-    @apply h-36 w-36 rounded-full border-red-600 bg-white text-[18px] font-normal leading-[21px] tracking-[0] text-blue900 md:h-[272px] md:w-[272px];
+    @apply h-36 w-36 rounded-full bg-white text-[18px] font-normal leading-[21px] tracking-[0] text-blue900 md:h-[272px] md:w-[272px];
   }
   .tablet-home-title {
     @apply text-center text-[144px] font-normal leading-[165px] tracking-[0px] text-white;
