@@ -36,6 +36,9 @@
   .title-8 {
     @apply font-barlowCondensed text-[16px] font-normal leading-[19px] tracking-[2px];
   }
+  .title-8-number {
+    @apply mr-3 font-barlowCondensed text-[16px] font-bold leading-[19px] tracking-[2.7px];
+  }
   .title-9 {
     @apply font-barlow text-[18px] font-normal leading-[180%] tracking-[0px];
   }
@@ -55,9 +58,18 @@
     @apply text-center text-[144px] font-normal leading-[165px] tracking-[0px] text-white;
   }
   .content-title {
-    @apply text-center text-[56px] font-normal uppercase leading-[64px] tracking-[0px] text-white
+    @apply text-center text-[56px] font-normal uppercase leading-[64px] tracking-[0px] text-white;
   }
- .page-title {
-  @apply space-x-6 text-center font-barlowCondensed text-[16px] uppercase leading-[19px] tracking-[2.4px] text-white md:text-start
- }
+  .page-title {
+    @apply space-x-6 text-center font-barlowCondensed text-[16px] uppercase leading-[19px] tracking-[2.4px] text-white md:text-start;
+  }
+  .crew-title {
+    @apply text-[18px] font-normal uppercase leading-[21px] tracking-[0px] text-white opacity-50;
+  }
+  .crew-name {
+    @apply text-[24px] font-normal uppercase leading-[28px] text-white;
+  }
+  .crew-introduction {
+    @apply text-center font-barlow text-[15px] font-normal leading-[1.8] tracking-[0px] text-blue300;
+  }
 }
