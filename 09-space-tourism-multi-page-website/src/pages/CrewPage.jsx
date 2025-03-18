@@ -39,7 +39,7 @@ export function CrewPage() {
                       key={item}
                     >
                       <li
-                        className={`h-2.5 w-2.5 cursor-pointer rounded-full bg-white 1440:h-[15px] 1440:w-[15px] ${item.toLowerCase() === position ? "" : "opacity-20"} `}
+                        className={`h-2.5 w-2.5 cursor-pointer rounded-full bg-white opacity-20 1440:h-[15px] 1440:w-[15px] ${item.toLowerCase() === position ? "opacity-100" : "hover:opacity-50"} `}
                         key={item}
                       ></li>
                     </Link>

@@ -1,4 +1,3 @@
-
 export function Paginator({ selectedTech, setSelectedTech }) {
   const techOptions = [
     { id: "launch-vehicle", label: 1 },
@@ -11,7 +10,7 @@ export function Paginator({ selectedTech, setSelectedTech }) {
       {techOptions.map(({ id, label }) => {
         return (
           <li
-            className={`1440:title-4 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full font-bellefair text-[18px] font-normal leading-[21px] md:h-14 md:w-14 md:text-[24px] md:leading-[28px] 1440:h-20 1440:w-20 ${id === selectedTech ? "bg-white" : "border border-[rgba(255,255,255,0.25)] bg-transparent"}`}
+            className={`1440:title-4 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full font-bellefair text-[18px] font-normal leading-[21px] md:h-14 md:w-14 md:text-[24px] md:leading-[28px] 1440:h-20 1440:w-20 ${id === selectedTech ? "bg-white" : "border border-[rgba(255,255,255,0.25)] bg-transparent hover:border-white"}`}
             key={id}
             onClick={() => setSelectedTech(id)}
           >

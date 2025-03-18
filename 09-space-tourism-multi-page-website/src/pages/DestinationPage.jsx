@@ -7,6 +7,7 @@ export function DestinationPage() {
   const data =
     DESTINATION_LIST[planet] || DESTINATION_LIST["moon"];
   const planets = ["MOON", "MARS", "EUROPA", "TITAN"];
+
   return (
     <section className="relative flex h-full w-full px-6 pt-[112px] md:justify-center md:px-10 md:py-32 md:pt-[136px] 1440:pt-[184px]">
       <div className="absolute left-0 top-0 -z-10 h-full w-full bg-[url('/src/assets/destination/background-destination-mobile.jpg')] bg-cover bg-center md:bg-[url('/src/assets/destination/background-destination-tablet.jpg')] 1440:bg-[url('/src/assets/destination/background-destination-desktop.jpg')]" />
@@ -35,7 +36,7 @@ export function DestinationPage() {
                   {planets.map((item) => {
                     return (
                       <li
-                        className={`border-blue300 ${item.toLowerCase() === planet ? "border-b-[3px] border-white text-white" : ""}`}
+                        className={`border-blue300 ${item.toLowerCase() === planet ? "border-b-[3px] border-white text-white" : "border-[rgba(255,255,255,0.5)] hover:border-b-[3px] hover:text-white"}`}
                         key={item}
                       >
                         <Link

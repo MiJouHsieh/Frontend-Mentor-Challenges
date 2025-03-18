@@ -12,10 +12,10 @@ export function Nav() {
   const location = useLocation();
   return (
     <nav className="absolute z-10 flex h-[88px] w-full max-w-[1440px] items-center justify-between p-6 text-white 660:p-0 md:h-24 1440:top-10">
-      <Link to="/" className="1440:relative">
+      <div className="1440:relative">
         <hr className="absolute left-[100%] top-[50%] hidden h-[1px] w-[325%] border-[#979797] 1440:block" />
         <IconLogo className="h-10 w-10 660:mx-10 md:h-12 md:w-12 1440:mx-16" />
-      </Link>
+      </div>
       <div className="660:hidden">
         <IconHamburger />
       </div>
@@ -46,7 +46,7 @@ export function Nav() {
                   className={`title-8 flex h-full cursor-pointer items-center ${
                     isActive
                       ? "border-b-[3px] border-white"
-                      : "hover:border-b-[3px] hover:border-white"
+                      : "border-[rgba(255,255,255,0.5)] hover:border-b-[3px]"
                   }`}
                 >
                   {number && (
