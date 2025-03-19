@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ExploreButton } from "src/components/ExploreButton";
 export function HomePage() {
   return (
-    <div className="relative flex h-screen w-full p-6 pt-[112px] md:px-10 md:py-32 md:pt-[224px] 1440:items-end 1440:justify-center">
+    <div className="relative flex h-full w-full p-6 pt-[112px] md:px-10 md:py-32 md:pt-[224px] 1440:items-end 1440:justify-center">
       <div className="absolute left-0 top-0 -z-10 h-full w-full bg-[url('/src/assets/home/background-home-mobile.jpg')] bg-cover bg-center md:bg-[url('/src/assets/home/background-home-tablet.jpg')] 1440:bg-[url('/src/assets/home/background-home-desktop.jpg')]" />
       <div className="flex w-full flex-col items-center md:h-[676px] md:justify-between 1440:h-[343px] 1440:max-w-[1110px] 1440:flex-row 1440:items-center 1440:justify-between">
         <div className="space-y-6 md:max-w-[512px] 1440:max-w-[540px]">
