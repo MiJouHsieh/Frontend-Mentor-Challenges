@@ -9,3 +9,21 @@
     font-family: "DM Sans", sans-serif;
   }
 }
+
+@layer utilities {
+  .text-preset-1 {
+    @apply text-[64px] leading-[100%] tracking-[-1px] font-bold
+  }
+  .text-preset-1-mobile {
+    @apply text-[40px] leading-[100%] tracking-[-1px] font-bold
+  }
+  .text-preset-2 {
+    @apply text-[24px] leading-[130%] tracking-[-1px] font-semibold
+  }
+  .text-preset-3 {
+    @apply text-[20px] leading-[140%] tracking-[-0.6px] font-normal
+  }
+  .text-preset-4 {
+    @apply text-[16px] leading-[130%] tracking-[-0.6px] font-normal
+  }
+}
