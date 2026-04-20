@@ -15,7 +15,10 @@ export default {
         green700: "#1A4032"
       }
     },
+    fontFamily: {
+      montserrat: ["Montserrat", "sans-serif"],
+      fraunces: ["Fraunces", "serif"]
+    }
   },
   plugins: [],
 }
-
