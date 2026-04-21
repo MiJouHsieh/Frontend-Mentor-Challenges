@@ -26,5 +26,11 @@
     .text-5 {
       @apply text-[13px] font-medium leading-[1.2] tracking-[0px] font-montserrat;
     }
+    .borderStyle {
+      @apply h-[50px] border-b-2 border-b-[#979797];
+    }
+    .iconStyle {
+      @apply w-[15.75px] h-[15.75px];
+    }
   }
 }
