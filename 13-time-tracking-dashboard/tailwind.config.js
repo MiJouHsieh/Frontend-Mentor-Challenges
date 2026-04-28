@@ -9,7 +9,7 @@ export default {
       fontFamily: {
         rubik: ["Rubik", "sans-serif"],
       },
-      color: {
+      colors: {
         white: "#FFFFFF",
         black: "#000000",
 
