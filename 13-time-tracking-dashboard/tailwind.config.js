@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        rubik: ["Rubik", "sans-serif"],
+      },
       color: {
         white: "#FFFFFF",
         black: "#000000",

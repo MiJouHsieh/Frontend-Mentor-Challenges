@@ -3,3 +3,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-rubik bg-navy950 text-white;
+  }
+}
+
+@layer utilities {
+    .text-1 {
+      @apply text-[56px] font-light leading-[66px];
+    }
+    .text-2 {
+      @apply text-[40px] font-light leading-[47px];
+    }
+    .text-3 {
+      @apply text-[32px] font-light leading-[38px];
+    }
+    .text-4 {
+      @apply text-[24px] font-light leading-[28px];
+    }
+     .text-5-medium {
+      @apply text-[18px] font-medium leading-[21px];
+    }
+    .text-5-regular {
+      @apply text-[18px] font-normal leading-[21px];
+    }
+    .text-6 {
+      @apply text-[15px] font-normal leading-[18px];
+    }
+  }
