@@ -1,4 +1,8 @@
-const TIME_RANGES = ["Daily", "Weekly", "Monthly"];
+const TIME_RANGES = [
+  { label: "Daily", value: "daily" },
+  { label: "Weekly", value: "weekly" },
+  { label: "Monthly", value: "monthly" },
+];
 
 export function TimeRangeTabs({ timeRange, setTimeRange }) {
   return (
@@ -6,18 +10,16 @@ export function TimeRangeTabs({ timeRange, setTimeRange }) {
       <ul className="text-purple500 text-5-regular flex py-6">
         {TIME_RANGES.map((range) => {
           return (
-            <li key={range} className="flex-1">
+            <li key={range.value} className="flex-1">
               <button
                 type="button"
                 className={`w-full text-center ${
-                  timeRange === range
-                    ? "text-white"
-                    : ""
+                  timeRange === range ? "text-white" : ""
                 }`}
-                onClick={() => setTimeRange(range)}
-                aria-pressed={timeRange === range}
+                onClick={() => setTimeRange(range.value)}
+                aria-pressed={timeRange === range.value}
               >
-                {range}
+                {range.label}
               </button>
             </li>
           );
