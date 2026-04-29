@@ -14,7 +14,7 @@ export function TimeRangeTabs({ timeRange, setTimeRange }) {
               <button
                 type="button"
                 className={`w-full text-center ${
-                  timeRange === range ? "text-white" : ""
+                  timeRange === range.value ? "text-white" : ""
                 }`}
                 onClick={() => setTimeRange(range.value)}
                 aria-pressed={timeRange === range.value}
