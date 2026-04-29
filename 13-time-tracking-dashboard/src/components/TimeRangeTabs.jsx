@@ -13,7 +13,7 @@ export function TimeRangeTabs({ timeRange, setTimeRange }) {
             <li key={range.value} className="flex-1">
               <button
                 type="button"
-                className={`w-full text-center ${
+                className={`w-full text-center hover:text-white ${
                   timeRange === range.value ? "text-white" : ""
                 }`}
                 onClick={() => setTimeRange(range.value)}
