@@ -9,8 +9,8 @@ export function TimeDashboard() {
   const [timeRange, setTimeRange] = useState("daily");
 
   return (
-    <section className="mx-auto flex w-full max-w-[327px] flex-col gap-6">
-      <div className="bg-navy900 flex flex-col rounded-[15px]">
+    <section className="mx-auto flex w-full min-w-[327px] max-w-[327px] flex-col gap-6 md:max-w-[612px] lg:max-w-[1116px] lg:flex-row lg:gap-8">
+      <div className="bg-navy900 flex flex-col rounded-[15px] lg:w-[255px]">
         <ProfileCard />
         <TimeRangeTabs
           timeRange={timeRange}
@@ -18,7 +18,7 @@ export function TimeDashboard() {
         />
       </div>
 
-      <div className="grid grid-cols-1 gap-6">
+      <div className="grid flex-1 grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8">
         {data.map((activity) => {
           const config = activityConfig[activity.title];
           const timeframe = activity.timeframes[timeRange];
