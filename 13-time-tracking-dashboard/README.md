@@ -27,5 +27,10 @@ A responsive time tracking dashboard built with React, Vite, and Tailwind CSS.
 
 ## Links
 
-- Live Site URL: 
-- GitHub Repo: 
+- Live Site URL: https://13-time-tracking-dashboard.vercel.app/
+- GitHub Repo: https://github.com/MiJouHsieh/Frontend-Mentor-Challenges/tree/main/13-time-tracking-dashboard
+
+## Screenshot
+
+![desktop screenshot](./screenshot-desktop.png)
+![Responsive screenshot](./screenshot-responsive.png)
