@@ -21,7 +21,10 @@ export default {
           400: "#5CA5A5",
           900: "#2B3939",
         },
-      }
+      },
+      fontFamily: {
+        "league-spartan": ["League Spartan", "sans-serif"],
+      },
     },
   },
   plugins: [],
