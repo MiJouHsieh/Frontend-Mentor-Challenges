@@ -1,5 +1,4 @@
-import bgHeaderMobile from "src/assets/bg-header-mobile.svg";
-import bgHeaderDesktop from "src/assets/bg-header-desktop.svg";
+
 
 export function Header() {
   return (
@@ -7,10 +6,10 @@ export function Header() {
       <picture>
         <source
           media="(min-width: 768px)"
-          srcSet={bgHeaderDesktop}
+          srcSet={"/images/bg-header-desktop.svg"}
         />
         <img
-          src={bgHeaderMobile}
+          src="/images/bg-header-mobile.svg"
           alt=""
           className="h-full w-full object-cover"
         />
