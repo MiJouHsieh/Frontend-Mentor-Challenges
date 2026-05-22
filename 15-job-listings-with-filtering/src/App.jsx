@@ -1,14 +1,14 @@
 import { Header } from "src/components/layout/Header";
 import { FilterBar } from "src/components/filters/FilterBar";
-import { JobList } from "src/components/jobs/JobList";
+import { JobListSection } from "src/components/jobs/JobListSection";
 function App() {
   return (
     <>
-      <section>
+      <section className="min-w-[375px]">
         <Header />
-        <main>
+        <main className="w-full h-full">
           <FilterBar />
-          <JobList />
+          <JobListSection />
         </main>
       </section>
     </>

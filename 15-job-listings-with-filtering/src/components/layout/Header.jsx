@@ -3,7 +3,7 @@ import bgHeaderDesktop from "src/assets/bg-header-desktop.svg";
 
 export function Header() {
   return (
-    <header className="h-[156px] bg-green-400">
+    <header className="bg-customGreen-400 h-[156px]">
       <picture>
         <source
           media="(min-width: 768px)"
