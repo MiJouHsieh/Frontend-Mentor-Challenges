@@ -25,6 +25,9 @@ export default {
       fontFamily: {
         "league-spartan": ["League Spartan", "sans-serif"],
       },
+      screens: {
+        "1440": "1440px"
+      },
     },
   },
   plugins: [],
