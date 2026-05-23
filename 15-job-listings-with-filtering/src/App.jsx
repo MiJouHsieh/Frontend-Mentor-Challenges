@@ -4,9 +4,9 @@ import { JobListSection } from "src/components/jobs/JobListSection";
 function App() {
   return (
     <>
-      <section className="min-w-[375px]">
+      <section className="bg-customGreen-50 min-w-[375px]">
         <Header />
-        <main className="w-full h-full">
+        <main className="mx-auto flex w-full max-w-[1110px] flex-col items-center">
           <FilterBar />
           <JobListSection />
         </main>
