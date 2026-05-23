@@ -2,7 +2,7 @@ import { JobList } from "src/components/jobs/JobList";
 
 export function JobListSection() {
   return (
-    <section className="bg-customGreen-50 mx-auto px-6 pb-8 pt-14 md:max-w-[1110px] md:px-0">
+    <section className="1440:mt-[76px] mx-auto mb-8 mt-14 w-full">
       <JobList />
     </section>
   );

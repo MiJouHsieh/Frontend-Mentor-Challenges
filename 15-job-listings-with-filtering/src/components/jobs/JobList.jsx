@@ -3,7 +3,7 @@ import data from "src/data/data.json";
 
 export function JobList() {
   return (
-    <div className="flex flex-col gap-10">
+    <div className="1440:gap-y-6 1440:flex-col 1440:w-[1110px] mx-auto flex w-full flex-wrap justify-center gap-10 md:w-[670px] md:gap-x-4">
       {data.map((card) => {
         return (
           <JobCard
