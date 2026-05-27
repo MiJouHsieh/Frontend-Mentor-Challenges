@@ -26,6 +26,7 @@ export default {
         "league-spartan": ["League Spartan", "sans-serif"],
       },
       screens: {
+        "694": "694px",
         "1440": "1440px"
       },
     },
