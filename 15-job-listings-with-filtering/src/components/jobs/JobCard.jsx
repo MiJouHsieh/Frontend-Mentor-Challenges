@@ -14,9 +14,14 @@ export function JobCard({
   location,
   languages = [],
   tools = [],
+  onFilterClick,
 }) {
   return (
-    <div className="hover:border-customGreen-400 1440:py-[31px] 1440:px-10 1440:w-full w-[327px] rounded-[5px] border-l-[5px] border-white bg-white pb-3 pl-[16px] pr-[21px] shadow-[0_10px_24px_rgba(91,164,164,0.22)]">
+    <div
+      className={`1440:py-[31px] 1440:px-10 1440:w-full w-[327px] rounded-[5px] border-l-[5px] bg-white pb-3 pl-[16px] pr-[21px] shadow-[0_10px_24px_rgba(91,164,164,0.22)] ${
+        featured ? "border-customGreen-400" : "border-white"
+      }`}
+    >
       <article className="1440:flex-row 1440:items-center flex flex-col justify-between">
         <div className="1440:flex 1440:items-center 1440:justify-between gap-6">
           <div className="relative">
@@ -29,18 +34,23 @@ export function JobCard({
 
           <div className="1440:mt-0 mt-8 flex flex-col gap-2">
             <div className="flex items-center justify-start gap-4">
-              <h1 className="text-4 text-customGreen-400 1440:text-2-bold">
+              <p className="text-4 text-customGreen-400 1440:text-2-bold">
                 {company}
-              </h1>
+              </p>
               <div className="flex items-center justify-start gap-2">
                 {isNew && <JobTag tag={"new!"} />}
-                {featured && <JobTag tag={"featured"} />}
+                {featured && (
+                  <JobTag
+                    className={"bg-customGreen-900"}
+                    tag={"featured"}
+                  />
+                )}
               </div>
             </div>
 
-            <h1 className="text-3-bold text-customGreen-900 1440:text-1">
+            <h2 className="text-3-bold text-customGreen-900 1440:text-1 hover:text-customGreen-400 hover:cursor-pointer">
               {position}
-            </h1>
+            </h2>
             <p className="text-3 1440:text-2 text-customGray-400 flex items-center gap-2">
               <span className="relative top-[1px]">
                 {postedAt}
@@ -59,13 +69,33 @@ export function JobCard({
 
         <hr className="bg-customGray-300 1440:hidden my-4 h-[1px]" />
         <div className="flex flex-wrap gap-2 bg-white">
+          <FilterTag
+            key={role}
+            tag={role}
+            onClick={() => onFilterClick(role)}
+          />
+          <FilterTag
+            key={level}
+            tag={level}
+            onClick={() => onFilterClick(level)}
+          />
           {languages.map((language) => {
-            return <FilterTag key={language} tag={language} />;
+            return (
+              <FilterTag
+                key={language}
+                tag={language}
+                onClick={() => onFilterClick(language)}
+              />
+            );
           })}
-          <FilterTag key={role} tag={role} />
-          <FilterTag key={level} tag={level} />
           {tools.map((tool) => {
-            return <FilterTag key={tool} tag={tool} />;
+            return (
+              <FilterTag
+                key={tool}
+                tag={tool}
+                onClick={() => onFilterClick(tool)}
+              />
+            );
           })}
         </div>
       </article>
