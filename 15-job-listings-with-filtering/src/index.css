@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-league-spartan;
+  }
+}
+
+@layer utilities {
+  .text-1 {
+    @apply text-[22px] font-bold leading-[110%] tracking-[0px];
+  }
+
+  .text-2-bold {
+    @apply text-[18px] font-bold leading-[100%] tracking-[0px];
+  }
+
+  .text-2 {
+    @apply text-[18px] font-medium leading-[135%] tracking-[-0.15px];
+  }
+
+  .text-3-bold {
+    @apply text-[16px] font-bold leading-[150%] tracking-[-0.15px];
+  }
+
+  .text-3 {
+    @apply text-[16px] font-medium leading-[150%] tracking-[-0.15px];
+  }
+
+  .text-4 {
+    @apply text-[14px] font-bold leading-[100%] tracking-[-0.15px];
+  }
+}
