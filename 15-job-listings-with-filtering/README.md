@@ -32,14 +32,11 @@ Frontend Mentor 練習：**Job listings with filtering**。
 - [未來可以改進的地方](#未來可以改進的地方)
 - [Portfolio notes](#portfolio-notes)
   - [這個作品對應到真實產品中的哪些功能？](#這個作品對應到真實產品中的哪些功能)
-  - [可以延伸成共用元件嗎？](#可以延伸成共用元件嗎)
-  - [面試時可以說明的重點](#面試時可以說明的重點)
 - [如何在本機執行](#如何在本機執行)
   - [Clone 專案](#clone-專案)
   - [進入專案資料夾](#進入專案資料夾)
   - [安裝套件](#安裝套件)
   - [啟動開發伺服器](#啟動開發伺服器)
-- [Author](#author)
 
 ---
 
@@ -81,8 +78,8 @@ Frontend Mentor 練習：**Job listings with filtering**。
 
 ### 連結
 
-- Solution URL: [GitHub Repository](連結)
-- Live Site URL: [Live Demo](連結)
+- Solution URL: [GitHub Repository](https://github.com/MiJouHsieh/Frontend-Mentor-Challenges/tree/main/15-job-listings-with-filtering)
+- Live Site URL: [Live Demo](https://15-job-listings-with-filtering.vercel.app/)
 
 ---
 
@@ -157,6 +154,7 @@ const handleFilterClick = (tag) => {
 ### localStorage 狀態保存
 
 本專案加入 localStorage，讓使用者重新整理頁面後，仍可以保留目前選取的篩選條件。
+這裡使用 lazy initial state，讓 localStorage 只在初次渲染時讀取一次，避免每次重新渲染都重新讀取 localStorage。
 
 ```jsx
 const [selectedFilters, setSelectedFilters] = useState(() => {
@@ -245,15 +243,15 @@ const [selectedFilters, setSelectedFilters] = useState([]);
 
 ### `h-screen` 讓背景高度不夠
 
-##### 問題
+**問題：**
 
 一開始將外層 section 設為 `h-screen`，但當內容高度超過螢幕時，超出的區域沒有背景色。
 
-##### 原因
+**原因：**
 
 `h-screen` 只代表高度等於目前視窗高度，不代表會隨內容繼續撐開。
 
-##### 解法
+**解法：**
 
 改用：
 
@@ -267,17 +265,17 @@ const [selectedFilters, setSelectedFilters] = useState([]);
 
 ### tag 文字視覺上沒有垂直置中
 
-##### 問題
+**問題：**
 
 JobTag 裡的文字看起來沒有垂直置中。已經使用 `flex`、`items-center` 和 `leading-none` 讓 tag 內容在容器中垂直置中，但實際畫面看起來文字仍然有一點偏上。也不是 `p-2` 跟固定高度 `h-[26px]` 衝突。
 
-##### 原因
+**原因：**
 
 這不是排版沒有置中的問題，而是字體本身的視覺中心與實際行高計算結果不同。
 
 即使元素已經透過 flex 對齊，某些字體在瀏覽器中仍可能看起來沒有完全置中。
 
-##### 解法
+**解法：**
 
 保留外層的 flex 對齊，並在文字本身加上微調：
 
@@ -295,7 +293,7 @@ JobTag 裡的文字看起來沒有垂直置中。已經使用 `flex`、`items-ce
 </span>
 ```
 
-##### 學到的事
+**學到的事：**
 
 這次理解到「技術上的置中」和「視覺上的置中」不一定完全相同。
 
@@ -305,11 +303,15 @@ JobTag 裡的文字看起來沒有垂直置中。已經使用 `flex`、`items-ce
 
 ### Filter tag 的圓角沒有正常顯示
 
-##### 問題
+**問題：**
 
 Filter tag 左右兩側由不同元素組成，外層有圓角，但內部背景色會蓋過圓角。
 
-##### 解法
+**原因：**
+
+外層雖然有設定 `rounded-sm`，但子元素本身也有背景色，會超出外層圓角的視覺範圍。
+
+**解法：**
 
 在外層加上：
 
@@ -323,11 +325,11 @@ className="overflow-hidden rounded-sm"
 
 ### 選多個 tag 時的篩選邏輯
 
-##### 問題
+**問題：**
 
 需要判斷職缺是否符合所有已選取的 tag。
 
-##### 解法
+**解法：**
 
 先將每張職缺的 `role`、`level`、`languages`、`tools` 組合成一個陣列，再用 `every()` 判斷每個 selected filter 是否都存在。
 
@@ -346,9 +348,9 @@ const filteredJobs = data.filter((job) => {
 
 ---
 
-##### 我學到的事
+**學到的事：**
 
-這次練習讓我更熟悉：
+這個篩選功能讓我練習到：
 
 - React 中父層管理狀態、子層觸發事件的資料流
 - 如何用 `map()` 渲染資料列表
@@ -392,29 +394,6 @@ const filteredJobs = data.filter((job) => {
 - 儀表板中的資料條件篩選
 - 課程平台的課程分類篩選
 
-### 可以延伸成共用元件嗎？
-
-可以。其中比較適合抽成共用元件的有：
-
-- `Tag`
-- `FilterBar`
-- `Card`
-- `ListSection`
-- `EmptyState`
-- `Button`
-- `Badge`
-
-### 面試時可以說明的重點
-
-這個作品可以用來說明：
-
-- 我如何拆分 React 元件
-- 我如何設計狀態放在哪一層
-- 我如何處理多條件篩選
-- 我如何讓資料與 UI 保持同步
-- 我如何根據設計稿完成 RWD
-- 我如何記錄問題並修正
-
 ---
 
 ## 如何在本機執行
@@ -422,13 +401,13 @@ const filteredJobs = data.filter((job) => {
 ### Clone 專案
 
 ```bash
-git clone GitHub repo URL
+git clone https://github.com/MiJouHsieh/Frontend-Mentor-Challenges.git
 ```
 
 ### 進入專案資料夾
 
 ```bash
-cd 15-job-listings-with-filtering
+cd Frontend-Mentor-Challenges/15-job-listings-with-filtering
 ```
 
 ### 安裝套件
