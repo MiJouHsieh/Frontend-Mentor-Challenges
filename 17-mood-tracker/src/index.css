@@ -3,3 +3,77 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    @apply min-h-screen  font-reddit-sans bg-light-gradient bg-no-repeat bg-cover text-moodNeutral-900;
+  }
+}
+
+@layer utilities {
+  .text-preset-1 {
+    @apply text-[52px] font-bold leading-[140%] tracking-[-2px];
+  }
+
+  .text-preset-1-mobile {
+    @apply text-[46px] font-bold leading-[120%] tracking-[-2px];
+  }
+
+  .text-preset-2 {
+    @apply text-[40px] font-bold leading-[120%] tracking-[-0.3px];
+  }
+
+  .text-preset-2-mobile {
+    @apply text-[32px] font-bold leading-[120%] tracking-[-0.3px];
+  }
+
+  .text-preset-3 {
+    @apply text-[32px] font-bold leading-[140%] tracking-[-0.3px];
+  }
+
+  .text-preset-3-mobile {
+    @apply text-[28px] font-bold leading-[130%] tracking-[-0.3px];
+  }
+
+  .text-preset-4-semibold {
+    @apply text-[24px] font-semibold leading-[140%] tracking-[0px];
+  }
+
+  .text-preset-4-regular {
+    @apply text-[24px] font-normal leading-[140%] tracking-[0px];
+  }
+
+  .text-preset-5 {
+    @apply text-[20px] font-semibold leading-[140%] tracking-[0px];
+  }
+
+  .text-preset-6 {
+    @apply text-[18px] font-medium leading-[120%] tracking-[0px];
+  }
+
+  .text-preset-6-italic {
+    @apply text-[18px] font-medium italic leading-[130%] tracking-[0px];
+  }
+
+  .text-preset-6-regular {
+    @apply text-[18px] font-normal leading-[140%] tracking-[-0.3px];
+  }
+
+  .text-preset-7 {
+    @apply text-[15px] font-normal leading-[140%] tracking-[-0.3px];
+  }
+
+  .text-preset-8 {
+    @apply text-[13px] font-semibold leading-[100%] tracking-[0px];
+  }
+
+  .text-preset-9 {
+    @apply text-[12px] font-normal leading-[110%] tracking-[0px];
+  }
+}
