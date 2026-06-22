@@ -1,12 +1,13 @@
+import { useRef, useState } from "react";
 import {
   BarChart,
   Bar,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
   ResponsiveContainer,
   LabelList,
+  ReferenceLine,
 } from "recharts";
 
 import { MOOD_OPTIONS } from "src/constants/moodOptions.js";
@@ -63,20 +64,36 @@ function DateXAxisTick({ x, y, payload }) {
   );
 }
 
-function SleepYAxisTick({ x, y, payload }) {
+function FixedSleepYAxis() {
+  const chartHeight = 312;
+  const xAxisHeight = 32;
+  const plotHeight = chartHeight - xAxisHeight;
+
+  const getY = (value) => ((5 - value) / 5) * plotHeight;
+
   return (
-    <g transform={`translate(${x}, ${y})`}>
-      <SleepIcon x={-60} y={-7} width={10} height={10} />
-      <text
-        x={-45}
-        y={4}
-        fill="#57577A"
-        fontSize={12}
-        textAnchor="start"
-      >
-        {SLEEP_LABELS[payload.value]}
-      </text>
-    </g>
+    <svg
+      width="68"
+      height={chartHeight}
+      style={{ overflow: "visible" }}
+    >
+      {[5, 4, 3, 2, 1].map((level) => (
+        <g key={level} transform={`translate(0, ${getY(level)})`}>
+          <SleepIcon x={0} y={-5} width={10} height={10} />
+
+          <text
+            x={14}
+            y={0}
+            textAnchor="start"
+            dominantBaseline="middle"
+            fill="#57577B"
+            fontSize={10}
+          >
+            {SLEEP_LABELS[level]}
+          </text>
+        </g>
+      ))}
+    </svg>
   );
 }
 
@@ -117,22 +134,28 @@ function CustomTooltip({ active, payload }) {
 
   const data = payload[0].payload;
   const mood = getMoodStyle(data.mood);
+  const MoodColorIcon = mood.colorIcon; //mood.colorIcon 是 React component，不是文字，所以要先取出來
 
   return (
-    <div className="flex flex-col gap-3 rounded-[10px] border border-moodBlue-100 w-max-[175px] h-max-[219px] bg-white p-3 shadow">
+    <div className="customTooltipShadow pointer-events-none flex max-h-[232px] w-[175px] flex-col gap-3 overflow-hidden rounded-[10px] border border-moodBlue-100 bg-white p-3">
       <div>
         <p className="mb-2 text-preset-8 text-moodNeutral-600">
           Mood
         </p>
-        <p className="mb-2 text-preset-7 text-moodNeutral-900">
-          {mood.label}
-        </p>
+        <div className="flex h-[21px] items-center gap-[6px]">
+          <span>
+            <MoodColorIcon width={16} height={16} />
+          </span>
+          <span className="text-preset-7 text-moodNeutral-900">
+            {mood.label}
+          </span>
+        </div>
       </div>
       <div>
         <p className="text-preset-8 mb-[6px] text-moodNeutral-600">
           Sleep
         </p>
-        <p className="mb-2 text-preset-7 text-moodNeutral-900">
+        <p className="text-preset-7 text-moodNeutral-900">
           {SLEEP_LABELS[data.sleepLevel]}
         </p>
       </div>
@@ -140,7 +163,7 @@ function CustomTooltip({ active, payload }) {
         <p className="text-preset-8 mb-[6px] text-moodNeutral-600">
           Reflection
         </p>
-        <p className="mb-2 text-preset-7 text-moodNeutral-900">
+        <p className="text-preset-9 max-h-[40px] overflow-hidden text-moodNeutral-900">
           {data.journalEntry}
         </p>
       </div>
@@ -148,7 +171,7 @@ function CustomTooltip({ active, payload }) {
         <p className="text-preset-8 mb-[6px] text-moodNeutral-600">
           Tags
         </p>
-        <p className="mb-2 text-preset-7 text-moodNeutral-900">
+        <p className="text-preset-9 text-moodNeutral-900">
           {data.feelings}
         </p>
       </div>
@@ -157,6 +180,36 @@ function CustomTooltip({ active, payload }) {
 }
 
 export function MoodSleepTrends() {
+  const scrollAreaRef = useRef(null);
+  const [tooltipPosition, setTooltipPosition] =
+    useState(undefined);
+
+  function handleTooltipPosition(state) {
+    const scrollArea = scrollAreaRef.current;
+    const coordinate = state?.activeCoordinate;
+
+    if (!scrollArea || !coordinate) return;
+
+    const tooltipWidth = 175;
+    const gap = 12;
+
+    const visibleLeft = scrollArea.scrollLeft;
+    const visibleRight = visibleLeft + scrollArea.clientWidth;
+
+    const rightX = coordinate.x + gap;
+    const leftX = coordinate.x - tooltipWidth - gap;
+
+    const x =
+      rightX + tooltipWidth <= visibleRight
+        ? rightX
+        : Math.max(visibleLeft + 4, leftX);
+
+    setTooltipPosition({
+      x,
+      y: 0,
+    });
+  }
+
   const chartData = moodData.moodEntries.map((entry) => {
     const date = new Date(entry.createdAt);
     const month = date.toLocaleDateString("en-US", {
@@ -178,7 +231,16 @@ export function MoodSleepTrends() {
     };
   });
 
-  const chartWidth = Math.max(chartData.length * 64 + 80, 311);
+  const fixedYAxisChartWidth = 68;
+  const yAxisGap = 16;
+
+  const barWidth = 40;
+  const barGap = 16;
+
+  const chartBodyWidth = Math.max(
+    chartData.length * (barWidth + barGap),
+    311 - fixedYAxisChartWidth - yAxisGap,
+  );
 
   return (
     <section className="px-4 py-5 mt-8 rounded-2xl bg-moodNeutral-0">
@@ -186,61 +248,95 @@ export function MoodSleepTrends() {
         Mood and sleep trends
       </h2>
 
-      <div className="chart-scroll h-[312px] w-full overflow-x-auto overflow-y-hidden">
-        <div style={{ width: `${chartWidth}px`, height: "100%" }}>
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart
-              data={chartData}
-              margin={{
-                top: 0,
-                right: 16,
-                bottom: 0,
-                left: 0,
-              }}
-              barCategoryGap={24}
-            >
-              <CartesianGrid
-                vertical={false}
-                horizontal={true}
-                strokeDasharray=""
-                stroke="#E0E6FA"
-              />
-              <XAxis
-                dataKey="dateLabel"
-                interval={0}
-                tick={<DateXAxisTick />}
-                tickLine={false}
-                tickMargin={12}
-                axisLine={false}
-                height={32}
-              />
-              <YAxis
-                type="number"
-                domain={[0, 5]}
-                ticks={[1, 2, 3, 4, 5]}
-                tick={<SleepYAxisTick />}
-                tickLine={false}
-                tickMargin={8}
-                axisLine={false}
-                width={76}
-              />
-              <Tooltip
-                content={<CustomTooltip />}
-                cursor={false}
-              />
-              <Bar
-                dataKey="sleepLevel"
-                barSize={40}
-                shape={<MoodBar />}
-                isAnimationActive={false}
+      <div className="flex h-[312px] w-full">
+        {/* 固定的 Y 軸 */}
+        <div
+          className="overflow-visible shrink-0"
+          style={{ width: `${fixedYAxisChartWidth}px` }}
+        >
+          <FixedSleepYAxis />
+        </div>
+
+        {/* 可水平滑動的圖表本體 */}
+        <div
+          className="flex-1 h-full pb-3 ml-4 overflow-x-auto overflow-y-hidden chart-scroll scroll trend-scroll-area"
+          ref={scrollAreaRef}
+        >
+          <div
+            style={{
+              width: `${chartBodyWidth}px`,
+              height: "100%",
+            }}
+          >
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart
+                data={chartData}
+                margin={{
+                  top: 0,
+                  right: 0,
+                  bottom: 0,
+                  left: 0,
+                }}
+                barCategoryGap={24}
+                //自動調整顯示位置
+                onMouseMove={handleTooltipPosition}
+                onMouseLeave={() => setTooltipPosition(undefined)}
               >
-                <LabelList
-                  dataKey="mood"
-                  content={<MoodEmojiLabel />}
+                <XAxis
+                  dataKey="dateLabel"
+                  interval={0}
+                  tick={<DateXAxisTick />}
+                  tickLine={false}
+                  tickMargin={12}
+                  axisLine={false}
+                  height={32}
                 />
-              </Bar>
-            </BarChart>
-          </ResponsiveContainer>
+
+                <YAxis
+                  hide
+                  type="number"
+                  domain={[0, 5]}
+                  ticks={[1, 2, 3, 4, 5]}
+                  width={0}
+                />
+
+                {[1, 2, 3, 4, 5].map((level) => (
+                  <ReferenceLine
+                    key={level}
+                    y={level}
+                    stroke="#E0E6FA"
+                    strokeDasharray=""
+                    zIndex={0} //在bar後面
+                  />
+                ))}
+
+                <Tooltip
+                  cursor={false}
+                  content={<CustomTooltip />}
+                  //自動調整顯示位置
+                  position={tooltipPosition}
+                  allowEscapeViewBox={{ x: true, y: true }}
+                  wrapperStyle={{
+                    zIndex: 50,
+                    pointerEvents: "none",
+                  }}
+                />
+
+                <Bar
+                  dataKey="sleepLevel"
+                  barSize={40}
+                  shape={<MoodBar />}
+                  isAnimationActive={false}
+                  activeBar={false}
+                >
+                  <LabelList
+                    dataKey="mood"
+                    content={<MoodEmojiLabel />}
+                  />
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
         </div>
       </div>
     </section>
