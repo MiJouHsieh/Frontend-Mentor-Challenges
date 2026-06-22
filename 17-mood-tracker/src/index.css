@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -12,7 +12,7 @@
   }
 
   body {
-    @apply min-h-screen  font-reddit-sans bg-light-gradient bg-no-repeat bg-cover text-moodNeutral-900;
+    @apply min-h-screen bg-light-gradient bg-cover bg-no-repeat font-reddit-sans text-moodNeutral-900;
   }
 }
 
@@ -75,5 +75,21 @@
 
   .text-preset-9 {
     @apply text-[12px] font-normal leading-[110%] tracking-[0px];
+  }
+
+  .customTooltipShadow {
+    @apply shadow-[0_4px_7px_0_rgba(33,33,77,0.16)];
+  }
+
+  .trend-scroll-area::-webkit-scrollbar {
+    @apply h-[2px];
+  }
+
+  .trend-scroll-area::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  .trend-scroll-area::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-[#C7D3F7];
   }
 }
