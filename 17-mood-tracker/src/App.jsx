@@ -1,11 +1,13 @@
+import { HomePage } from "src/pages/HomePage";
 
 function App() {
-
   return (
     <>
-      <main></main>
+      <div className="w-full mx-auto ">
+        <HomePage />
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
